@@ -1,0 +1,55 @@
+SPECTRAL ANALYSIS REPORT (R=16, non-overlapping windows)
+========================================================================
+Signal                                     W       T     SC_avg              Best_PO   PO_cos
+------------------------------------------------------------------------
+tb_top.file                              103    3955     1.0000 tb_top.file             1.000
+state_name.state                           1    3955     1.0000 tb_top.file             1.000
+state_name.state_name                    127    3955     1.0233 tb_top.file             1.000
+tb_top.rst_n                               1    3955     1.0526 tb_top.rst_n            1.000
+dut.reset                                  1    3955     1.0526 tb_top.rst_n            1.000
+tb_top.write_count                        32    3955     1.4243 tb_top.write_count      1.000
+tb_top.last_write_addr                    20    3955     1.6923 tb_top.last_write_ad    1.000
+dut.t                                    104    3955     1.7852 tb_top.last_write_ad    1.000
+dut.tsign                                104    3955     1.7852 tb_top.last_write_ad    1.000
+dut.clock                                  1    3955     2.0000 tb_top.last_read_dat    0.045
+tb_top.last_write_data                   104    3955     2.1667 tb_top.last_write_da    1.000
+dut.datao                                104    3955     2.1804 tb_top.last_write_da    1.000
+dut.reg0                                 104    3955     2.5742 tb_top.prev_reg0        1.000
+tb_top.prev_reg0                         104    3955     2.5811 tb_top.prev_reg0        1.000
+tb_top.prev_reg1                         104    3955     2.8204 tb_top.prev_reg1        1.000
+dut.reg1                                 104    3955     2.8240 tb_top.prev_reg1        1.000
+tb_top.prev_reg2                         104    3955     3.7477 tb_top.prev_reg2        1.000
+dut.reg2                                 104    3955     3.7606 tb_top.prev_reg2        1.000
+dut.state                                  1    3955     4.0607 tb_top.last_read_add    0.301
+dut.wr                                     1    3955     4.7247 tb_top.prev_reg2        0.997
+dut.reg3                                 104    3955     6.2600 tb_top.prev_reg3        1.000
+dut.temp                                 104    3955     6.2696 tb_top.prev_reg3        1.000
+tb_top.prev_reg3                         104    3955     6.3359 tb_top.prev_reg3        1.000
+tb_top.fetch_count                        32    3955     6.4377 tb_top.fetch_count      1.000
+tb_top.i                                  37    3955     7.6435 tb_top.i                1.000
+tb_top.exec_count                         32    3955     7.6519 tb_top.exec_count       1.000
+tb_top.read_count                         34    3955     8.6642 tb_top.read_count       1.000
+dut.MAR                                   64    3955     9.4412 tb_top.read_count       0.999
+dut.d                                      4    3955     9.5676 tb_top.read_count       0.999
+dut.r                                    104    3955    11.8829 tb_top.read_count       0.989
+dut.B                                      1    3955    11.9787 tb_top.read_count       0.990
+dut.MBR                                  104    3955    14.0209 tb_top.last_read_dat    0.988
+dut.IR                                   104    3955    14.6527 tb_top.last_read_dat    1.000
+tb_top.last_read_data                    104    3955    14.8997 tb_top.last_read_dat    1.000
+dut.datai                                104    3955    15.2252 tb_top.last_read_dat    0.998
+tb_top.last_read_addr                     64    3955    15.7843 tb_top.last_read_add    1.000
+dut.m                                    104    3955    16.7647 tb_top.last_read_dat    0.980
+dut.addr                                  64    3955    18.1989 tb_top.last_read_dat    0.975
+dut.mf                                     4    3955    18.3163 tb_top.last_read_dat    0.964
+dut.rd                                     1    3955    18.4838 tb_top.last_read_dat    0.947
+dut.s                                      4    3955    18.6480 tb_top.last_read_dat    0.959
+dut.df                                     7    3955    20.7614 tb_top.last_read_dat    0.921
+dut.tail                                  64    3955    20.7652 tb_top.last_read_dat    0.931
+dut.ff                                    11    3955    21.0920 tb_top.last_read_dat    0.927
+dut.cf                                     1    3955    24.6883 tb_top.last_read_dat    0.813
+
+Notes:
+  - Lower SC_avg => harder to control (strong scan candidates).
+  - PO_cos is a crude observability proxy (max cosine similarity
+    between a signal's spectrum and any PO spectrum).
+  - You’ll still rank/registers by SCC etc. outside this script.

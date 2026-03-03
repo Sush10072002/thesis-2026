@@ -1,0 +1,109 @@
+SINGLE-BIT SIGNALS
++--------------+----------+----------+-------+-------+---------+
+| Signal       | Count(0) | Count(1) | p(0)  | p(1)  | Entropy |
++--------------+----------+----------+-------+-------+---------+
+| dut.clock    | 3456     | 3456     | 0.500 | 0.500 | 1.000   |
+| dut.line1    | 3392     | 3520     | 0.491 | 0.509 | 1.000   |
+| dut.line2    | 3436     | 3476     | 0.497 | 0.503 | 1.000   |
+| dut.outp     | 3445     | 3467     | 0.498 | 0.502 | 1.000   |
+| dut.overflw  | 6072     | 840      | 0.878 | 0.122 | 0.534   |
+| dut.reset    | 6907     | 4        | 0.999 | 0.001 | 0.007   |
+| tb_top.rst_n | 4        | 6908     | 0.001 | 0.999 | 0.007   |
++--------------+----------+----------+-------+-------+---------+
+
+MULTI-BIT BUSES
++------------------------+-----------+-----------------+--------------+-------------------+-------+
+| Signal                 | Bit Count | Average Entropy | Min. Entropy | #low-entropy bits | C(B)  |
++------------------------+-----------+-----------------+--------------+-------------------+-------+
+| dut.stato              | 3         | 0.992           | 0.979        | 0                 | 0.995 |
+| tb_top.file            | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| tb_top.i               | 32        | 0.373           | 0.000        | 20                | 0.374 |
+| tb_top.overflow_count  | 32        | 0.279           | 0.000        | 23                | 0.280 |
+| tb_top.state_a_count   | 32        | 0.280           | 0.000        | 23                | 0.280 |
+| tb_top.state_b_count   | 32        | 0.301           | 0.000        | 22                | 0.306 |
+| tb_top.state_c_count   | 32        | 0.288           | 0.000        | 22                | 0.298 |
+| tb_top.state_e_count   | 32        | 0.279           | 0.000        | 23                | 0.280 |
+| tb_top.state_f_count   | 32        | 0.249           | 0.000        | 24                | 0.249 |
+| tb_top.state_g_count   | 32        | 0.273           | 0.000        | 23                | 0.276 |
+| tb_top.state_wf0_count | 32        | 0.281           | 0.000        | 23                | 0.281 |
+| tb_top.state_wf1_count | 32        | 0.273           | 0.000        | 23                | 0.277 |
++------------------------+-----------+-----------------+--------------+-------------------+-------+
+
+scan recommendations for signals (H < 0.14):
+tb_top.file[31], tb_top.file[30], tb_top.file[29], tb_top.file[28], tb_top.file[27], tb_top.file[26]
+tb_top.file[25], tb_top.file[24], tb_top.file[23], tb_top.file[22], tb_top.file[21], tb_top.file[20]
+tb_top.file[19], tb_top.file[18], tb_top.file[17], tb_top.file[16], tb_top.file[15], tb_top.file[14]
+tb_top.file[13], tb_top.file[12], tb_top.file[11], tb_top.file[10], tb_top.file[9], tb_top.file[8]
+tb_top.file[7], tb_top.file[6], tb_top.file[5], tb_top.file[4], tb_top.file[3], tb_top.file[2]
+tb_top.file[1], tb_top.file[0], tb_top.i[31], tb_top.i[30], tb_top.i[29], tb_top.i[28], tb_top.i[27]
+tb_top.i[26], tb_top.i[25], tb_top.i[24], tb_top.i[23], tb_top.i[22], tb_top.i[21], tb_top.i[20]
+tb_top.i[19], tb_top.i[18], tb_top.i[17], tb_top.i[16], tb_top.i[15], tb_top.i[14], tb_top.i[13]
+tb_top.i[12], tb_top.overflow_count[31], tb_top.overflow_count[30], tb_top.overflow_count[29]
+tb_top.overflow_count[28], tb_top.overflow_count[27], tb_top.overflow_count[26]
+tb_top.overflow_count[25], tb_top.overflow_count[24], tb_top.overflow_count[23]
+tb_top.overflow_count[22], tb_top.overflow_count[21], tb_top.overflow_count[20]
+tb_top.overflow_count[19], tb_top.overflow_count[18], tb_top.overflow_count[17]
+tb_top.overflow_count[16], tb_top.overflow_count[15], tb_top.overflow_count[14]
+tb_top.overflow_count[13], tb_top.overflow_count[12], tb_top.overflow_count[11]
+tb_top.overflow_count[10], tb_top.overflow_count[9], tb_top.state_a_count[31]
+tb_top.state_a_count[30], tb_top.state_a_count[29], tb_top.state_a_count[28]
+tb_top.state_a_count[27], tb_top.state_a_count[26], tb_top.state_a_count[25]
+tb_top.state_a_count[24], tb_top.state_a_count[23], tb_top.state_a_count[22]
+tb_top.state_a_count[21], tb_top.state_a_count[20], tb_top.state_a_count[19]
+tb_top.state_a_count[18], tb_top.state_a_count[17], tb_top.state_a_count[16]
+tb_top.state_a_count[15], tb_top.state_a_count[14], tb_top.state_a_count[13]
+tb_top.state_a_count[12], tb_top.state_a_count[11], tb_top.state_a_count[10]
+tb_top.state_a_count[9], tb_top.state_b_count[31], tb_top.state_b_count[30]
+tb_top.state_b_count[29], tb_top.state_b_count[28], tb_top.state_b_count[27]
+tb_top.state_b_count[26], tb_top.state_b_count[25], tb_top.state_b_count[24]
+tb_top.state_b_count[23], tb_top.state_b_count[22], tb_top.state_b_count[21]
+tb_top.state_b_count[20], tb_top.state_b_count[19], tb_top.state_b_count[18]
+tb_top.state_b_count[17], tb_top.state_b_count[16], tb_top.state_b_count[15]
+tb_top.state_b_count[14], tb_top.state_b_count[13], tb_top.state_b_count[12]
+tb_top.state_b_count[11], tb_top.state_b_count[10], tb_top.state_c_count[31]
+tb_top.state_c_count[30], tb_top.state_c_count[29], tb_top.state_c_count[28]
+tb_top.state_c_count[27], tb_top.state_c_count[26], tb_top.state_c_count[25]
+tb_top.state_c_count[24], tb_top.state_c_count[23], tb_top.state_c_count[22]
+tb_top.state_c_count[21], tb_top.state_c_count[20], tb_top.state_c_count[19]
+tb_top.state_c_count[18], tb_top.state_c_count[17], tb_top.state_c_count[16]
+tb_top.state_c_count[15], tb_top.state_c_count[14], tb_top.state_c_count[13]
+tb_top.state_c_count[12], tb_top.state_c_count[11], tb_top.state_c_count[10]
+tb_top.state_e_count[31], tb_top.state_e_count[30], tb_top.state_e_count[29]
+tb_top.state_e_count[28], tb_top.state_e_count[27], tb_top.state_e_count[26]
+tb_top.state_e_count[25], tb_top.state_e_count[24], tb_top.state_e_count[23]
+tb_top.state_e_count[22], tb_top.state_e_count[21], tb_top.state_e_count[20]
+tb_top.state_e_count[19], tb_top.state_e_count[18], tb_top.state_e_count[17]
+tb_top.state_e_count[16], tb_top.state_e_count[15], tb_top.state_e_count[14]
+tb_top.state_e_count[13], tb_top.state_e_count[12], tb_top.state_e_count[11]
+tb_top.state_e_count[10], tb_top.state_e_count[9], tb_top.state_f_count[31]
+tb_top.state_f_count[30], tb_top.state_f_count[29], tb_top.state_f_count[28]
+tb_top.state_f_count[27], tb_top.state_f_count[26], tb_top.state_f_count[25]
+tb_top.state_f_count[24], tb_top.state_f_count[23], tb_top.state_f_count[22]
+tb_top.state_f_count[21], tb_top.state_f_count[20], tb_top.state_f_count[19]
+tb_top.state_f_count[18], tb_top.state_f_count[17], tb_top.state_f_count[16]
+tb_top.state_f_count[15], tb_top.state_f_count[14], tb_top.state_f_count[13]
+tb_top.state_f_count[12], tb_top.state_f_count[11], tb_top.state_f_count[10]
+tb_top.state_f_count[9], tb_top.state_f_count[8], tb_top.state_g_count[31], tb_top.state_g_count[30]
+tb_top.state_g_count[29], tb_top.state_g_count[28], tb_top.state_g_count[27]
+tb_top.state_g_count[26], tb_top.state_g_count[25], tb_top.state_g_count[24]
+tb_top.state_g_count[23], tb_top.state_g_count[22], tb_top.state_g_count[21]
+tb_top.state_g_count[20], tb_top.state_g_count[19], tb_top.state_g_count[18]
+tb_top.state_g_count[17], tb_top.state_g_count[16], tb_top.state_g_count[15]
+tb_top.state_g_count[14], tb_top.state_g_count[13], tb_top.state_g_count[12]
+tb_top.state_g_count[11], tb_top.state_g_count[10], tb_top.state_g_count[9]
+tb_top.state_wf0_count[31], tb_top.state_wf0_count[30], tb_top.state_wf0_count[29]
+tb_top.state_wf0_count[28], tb_top.state_wf0_count[27], tb_top.state_wf0_count[26]
+tb_top.state_wf0_count[25], tb_top.state_wf0_count[24], tb_top.state_wf0_count[23]
+tb_top.state_wf0_count[22], tb_top.state_wf0_count[21], tb_top.state_wf0_count[20]
+tb_top.state_wf0_count[19], tb_top.state_wf0_count[18], tb_top.state_wf0_count[17]
+tb_top.state_wf0_count[16], tb_top.state_wf0_count[15], tb_top.state_wf0_count[14]
+tb_top.state_wf0_count[13], tb_top.state_wf0_count[12], tb_top.state_wf0_count[11]
+tb_top.state_wf0_count[10], tb_top.state_wf0_count[9], tb_top.state_wf1_count[31]
+tb_top.state_wf1_count[30], tb_top.state_wf1_count[29], tb_top.state_wf1_count[28]
+tb_top.state_wf1_count[27], tb_top.state_wf1_count[26], tb_top.state_wf1_count[25]
+tb_top.state_wf1_count[24], tb_top.state_wf1_count[23], tb_top.state_wf1_count[22]
+tb_top.state_wf1_count[21], tb_top.state_wf1_count[20], tb_top.state_wf1_count[19]
+tb_top.state_wf1_count[18], tb_top.state_wf1_count[17], tb_top.state_wf1_count[16]
+tb_top.state_wf1_count[15], tb_top.state_wf1_count[14], tb_top.state_wf1_count[13]
+tb_top.state_wf1_count[12], tb_top.state_wf1_count[11], tb_top.state_wf1_count[10]
+tb_top.state_wf1_count[9], tb_top.rst_n, dut.reset

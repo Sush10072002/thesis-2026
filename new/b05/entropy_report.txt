@@ -1,0 +1,54 @@
+SINGLE-BIT SIGNALS
++--------------+----------+----------+-------+-------+---------+
+| Signal       | Count(0) | Count(1) | p(0)  | p(1)  | Entropy |
++--------------+----------+----------+-------+-------+---------+
+| dut.CLOCK    | 2982     | 2981     | 0.500 | 0.500 | 1.000   |
+| dut.EN_DISP  | 273      | 5690     | 0.046 | 0.954 | 0.268   |
+| dut.FLAG     | 2467     | 3496     | 0.414 | 0.586 | 0.978   |
+| dut.MAG1     | 4462     | 1501     | 0.748 | 0.252 | 0.814   |
+| dut.MAG2     | 4563     | 1400     | 0.765 | 0.235 | 0.786   |
+| dut.MIN1     | 4911     | 1052     | 0.824 | 0.176 | 0.672   |
+| dut.RESET    | 5959     | 4        | 0.999 | 0.001 | 0.008   |
+| dut.RES_DISP | 11       | 5952     | 0.002 | 0.998 | 0.019   |
+| dut.SIGN     | 5690     | 273      | 0.954 | 0.046 | 0.268   |
+| dut.START    | 2973     | 2990     | 0.499 | 0.501 | 1.000   |
+| tb_top.rst_n | 4        | 5959     | 0.001 | 0.999 | 0.008   |
++--------------+----------+----------+-------+-------+---------+
+
+MULTI-BIT BUSES
++-----------------------------+-----------+-----------------+--------------+-------------------+-------+
+| Signal                      | Bit Count | Average Entropy | Min. Entropy | #low-entropy bits | C(B)  |
++-----------------------------+-----------+-----------------+--------------+-------------------+-------+
+| dut.AC1                     | 32        | 0.682           | 0.603        | 0                 | 0.809 |
+| dut.AC2                     | 32        | 0.836           | 0.786        | 0                 | 0.901 |
+| dut.DISPMAX1                | 7         | 0.226           | 0.019        | 1                 | 0.478 |
+| dut.DISPMAX2                | 7         | 0.226           | 0.019        | 1                 | 0.478 |
+| dut.DISPMAX3                | 7         | 0.226           | 0.019        | 1                 | 0.478 |
+| dut.DISPNUM1                | 7         | 0.226           | 0.019        | 1                 | 0.478 |
+| dut.DISPNUM2                | 7         | 0.224           | 0.000        | 1                 | 0.477 |
+| dut.MAR                     | 32        | 0.156           | 0.000        | 27                | 0.156 |
+| dut.MAX                     | 32        | 0.938           | 0.000        | 1                 | 0.950 |
+| dut.NUM                     | 32        | 0.112           | 0.000        | 28                | 0.117 |
+| dut.STATO                   | 3         | 1.000           | 0.999        | 0                 | 1.000 |
+| dut.TEMP                    | 32        | 0.742           | 0.671        | 0                 | 0.845 |
+| dut.TM                      | 32        | 0.136           | 0.000        | 5                 | 0.419 |
+| dut.TMN                     | 6         | 0.000           | 0.000        | 6                 | 0.000 |
+| dut.TN                      | 32        | 0.030           | 0.000        | 26                | 0.093 |
+| +-----------------------------+-----------+-----------------+--------------+-------------------+-------+
+
+scan recommendations for signals (H < 0.14):
+dut.DISPNUM2[0], dut.MAR[31], dut.MAR[30], dut.MAR[29], dut.MAR[28], dut.MAR[27], dut.MAR[26]
+dut.MAR[25], dut.MAR[24], dut.MAR[23], dut.MAR[22], dut.MAR[21], dut.MAR[20], dut.MAR[19]
+dut.MAR[18], dut.MAR[17], dut.MAR[16], dut.MAR[15], dut.MAR[14], dut.MAR[13], dut.MAR[12]
+dut.MAR[11], dut.MAR[10], dut.MAR[9], dut.MAR[8], dut.MAR[7], dut.MAR[6], dut.MAR[5], dut.MAX[0]
+dut.NUM[31], dut.NUM[30], dut.NUM[29], dut.NUM[28], dut.NUM[27], dut.NUM[26], dut.NUM[25]
+dut.NUM[24], dut.NUM[23], dut.NUM[22], dut.NUM[21], dut.NUM[20], dut.NUM[19], dut.NUM[18]
+dut.NUM[17], dut.NUM[16], dut.NUM[15], dut.NUM[14], dut.NUM[13], dut.NUM[12], dut.NUM[11]
+dut.NUM[10], dut.NUM[9], dut.NUM[8], dut.NUM[7], dut.NUM[6], dut.NUM[5], dut.NUM[4], dut.TM[7]
+dut.TM[6], dut.TM[5], dut.TM[4], dut.TM[1], dut.TMN[5], dut.TMN[4], dut.TMN[3], dut.TMN[2]
+dut.TMN[1], dut.TMN[0], dut.TN[31], dut.TN[30], dut.TN[29], dut.TN[28], dut.TN[27], dut.TN[26]
+dut.TN[25], dut.TN[24], dut.TN[23], dut.TN[22], dut.TN[21], dut.TN[20], dut.TN[19], dut.TN[18]
+dut.TN[17], dut.TN[16], dut.TN[15], dut.TN[14], dut.TN[13], dut.TN[12], dut.TN[11], dut.TN[10]
+dut.TN[9], dut.TN[8], dut.TN[3], dut.TN[0], dut.RESET
+tb_top.rst_n, tb_top.state_st0_count[0], dut.DISPMAX1[6], dut.DISPMAX2[6], dut.DISPMAX3[6]
+dut.DISPNUM1[6], dut.RES_DISP

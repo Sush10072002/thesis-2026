@@ -1,0 +1,20 @@
+{
+  "rtl_dir": "rtl",
+  "tb_dir": "tb",
+  "work_dir": "tournament_work",
+  "vcd_parser": "./vcdparse/verilog-vcd-parser/build/vcd-parse",
+  
+  "entropy_threshold": 0.14,
+  "sc_avg_threshold": 5.0,
+  "po_cos_threshold": 0.5,
+  "change_threshold": 0.20,
+  
+  "sim_cycles": 50000,
+  "random_seed": 1,
+  
+  "vsim_path": "vsim",
+  "vcs_path": "vcs",
+  "sgraph_tcl": "sgraph.tcl",
+  
+  "max_tournaments": 10
+}

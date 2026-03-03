@@ -1,0 +1,169 @@
+SINGLE-BIT SIGNALS
++--------------+----------+----------+-------+-------+---------m +
+| Signal       | Count(0) | Count(1) | p(0)  | p(1)  | Entropy |
++--------------+----------+----------+-------+-------+---------+
+| dut.clock    | 5903     | 5903     | 0.500 | 0.500 | 1.000   |
+| dut.reset    | 11801    | 4        | 1.000 | 0.000 | 0.004   |
+| dut.start    | 5823     | 5983     | 0.493 | 0.507 | 1.000   |
+| tb_top.rst_n | 4        | 11802    | 0.000 | 1.000 | 0.004   |
++--------------+----------+----------+-------+-------+---------+
+
+MULTI-BIT BUSES
++-----------------------------------+-----------+-----------------+--------------+-------------------+-------+
+| Signal                            | Bit Count | Average Entropy | Min. Entropy | #low-entropy bits | C(B)  |
++-----------------------------------+-----------+-----------------+--------------+-------------------+-------+
+| dut.cont                          | 8         | 0.245           | 0.000        | 6                 | 0.247 |
+| dut.mar                           | 5         | 0.789           | 0.000        | 1                 | 0.794 |
+| dut.punti_retta                   | 8         | 0.125           | 0.000        | 7                 | 0.125 |
+| dut.stato                         | 3         | 0.982           | 0.982        | 0                 | 0.989 |
+| dut.t                             | 8         | 0.488           | 0.000        | 1                 | 0.643 |
+| dut.x                             | 8         | 0.505           | 0.366        | 0                 | 0.703 |
+| dut.y                             | 8         | 0.638           | 0.520        | 0                 | 0.783 |
+| tb_top.calc_sequence_count        | 32        | 0.293           | 0.000        | 22                | 0.301 |
+| tb_top.calculation_complete_count | 32        | 0.230           | 0.000        | 24                | 0.238 |
+| tb_top.file                       | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| tb_top.final_punti_retta          | 32        | 0.031           | 0.000        | 31                | 0.031 |
+| tb_top.i                          | 32        | 0.401           | 0.000        | 19                | 0.403 |
+| tb_top.max_cont_value             | 32        | 0.003           | 0.000        | 32                | 0.002 |
+| tb_top.point_detected_count       | 32        | 0.303           | 0.000        | 22                | 0.307 |
+| tb_top.prev_punti_retta           | 8         | 0.125           | 0.000        | 7                 | 0.125 |
+| tb_top.start_count                | 32        | 0.369           | 0.000        | 20                | 0.372 |
+| tb_top.state_calc_retta_count     | 32        | 0.324           | 0.000        | 21                | 0.332 |
+| tb_top.state_incrementa_count     | 32        | 0.331           | 0.000        | 21                | 0.336 |
+| tb_top.state_load_x_count         | 32        | 0.324           | 0.000        | 21                | 0.332 |
+| tb_top.state_load_y_count         | 32        | 0.324           | 0.000        | 21                | 0.332 |
+| tb_top.state_reset_count          | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| tb_top.state_start_count          | 32        | 0.258           | 0.000        | 23                | 0.267 |
+| tb_top.state_update_mar_count     | 32        | 0.324           | 0.000        | 21                | 0.332 |
++-----------------------------------+-----------+-----------------+--------------+-------------------+-------+
+
+scan recommendations for signals (H < 0.14):
+dut.cont[7], dut.cont[6], dut.cont[5], dut.cont[4], dut.cont[3], dut.cont[2], dut.mar[4]
+dut.punti_retta[7], dut.punti_retta[6], dut.punti_retta[5], dut.punti_retta[4], dut.punti_retta[3]
+dut.punti_retta[1], dut.punti_retta[0], dut.t[0], tb_top.calc_sequence_count[31]
+tb_top.calc_sequence_count[30], tb_top.calc_sequence_count[29], tb_top.calc_sequence_count[28]
+tb_top.calc_sequence_count[27], tb_top.calc_sequence_count[26], tb_top.calc_sequence_count[25]
+tb_top.calc_sequence_count[24], tb_top.calc_sequence_count[23], tb_top.calc_sequence_count[22]
+tb_top.calc_sequence_count[21], tb_top.calc_sequence_count[20], tb_top.calc_sequence_count[19]
+tb_top.calc_sequence_count[18], tb_top.calc_sequence_count[17], tb_top.calc_sequence_count[16]
+tb_top.calc_sequence_count[15], tb_top.calc_sequence_count[14], tb_top.calc_sequence_count[13]
+tb_top.calc_sequence_count[12], tb_top.calc_sequence_count[11], tb_top.calc_sequence_count[10]
+tb_top.calculation_complete_count[31], tb_top.calculation_complete_count[30]
+tb_top.calculation_complete_count[29], tb_top.calculation_complete_count[28]
+tb_top.calculation_complete_count[27], tb_top.calculation_complete_count[26]
+tb_top.calculation_complete_count[25], tb_top.calculation_complete_count[24]
+tb_top.calculation_complete_count[23], tb_top.calculation_complete_count[22]
+tb_top.calculation_complete_count[21], tb_top.calculation_complete_count[20]
+tb_top.calculation_complete_count[19], tb_top.calculation_complete_count[18]
+tb_top.calculation_complete_count[17], tb_top.calculation_complete_count[16]
+tb_top.calculation_complete_count[15], tb_top.calculation_complete_count[14]
+tb_top.calculation_complete_count[13], tb_top.calculation_complete_count[12]
+tb_top.calculation_complete_count[11], tb_top.calculation_complete_count[10]
+tb_top.calculation_complete_count[9], tb_top.calculation_complete_count[8], tb_top.file[31]
+tb_top.file[30], tb_top.file[29], tb_top.file[28], tb_top.file[27], tb_top.file[26], tb_top.file[25]
+tb_top.file[24], tb_top.file[23], tb_top.file[22], tb_top.file[21], tb_top.file[20], tb_top.file[19]
+tb_top.file[18], tb_top.file[17], tb_top.file[16], tb_top.file[15], tb_top.file[14], tb_top.file[13]
+tb_top.file[12], tb_top.file[11], tb_top.file[10], tb_top.file[9], tb_top.file[8], tb_top.file[7]
+tb_top.file[6], tb_top.file[5], tb_top.file[4], tb_top.file[3], tb_top.file[2], tb_top.file[1]
+tb_top.file[0], tb_top.final_punti_retta[31], tb_top.final_punti_retta[30]
+tb_top.final_punti_retta[29], tb_top.final_punti_retta[28], tb_top.final_punti_retta[27]
+tb_top.final_punti_retta[26], tb_top.final_punti_retta[25], tb_top.final_punti_retta[24]
+tb_top.final_punti_retta[23], tb_top.final_punti_retta[22], tb_top.final_punti_retta[21]
+tb_top.final_punti_retta[20], tb_top.final_punti_retta[19], tb_top.final_punti_retta[18]
+tb_top.final_punti_retta[17], tb_top.final_punti_retta[16], tb_top.final_punti_retta[15]
+tb_top.final_punti_retta[14], tb_top.final_punti_retta[13], tb_top.final_punti_retta[12]
+tb_top.final_punti_retta[11], tb_top.final_punti_retta[10], tb_top.final_punti_retta[9]
+tb_top.final_punti_retta[8], tb_top.final_punti_retta[7], tb_top.final_punti_retta[6]
+tb_top.final_punti_retta[5], tb_top.final_punti_retta[4], tb_top.final_punti_retta[3]
+tb_top.final_punti_retta[1], tb_top.final_punti_retta[0], tb_top.i[31], tb_top.i[30], tb_top.i[29]
+tb_top.i[28], tb_top.i[27], tb_top.i[26], tb_top.i[25], tb_top.i[24], tb_top.i[23], tb_top.i[22]
+tb_top.i[21], tb_top.i[20], tb_top.i[19], tb_top.i[18], tb_top.i[17], tb_top.i[16], tb_top.i[15]
+tb_top.i[14], tb_top.i[13], tb_top.max_cont_value[31], tb_top.max_cont_value[30]
+tb_top.max_cont_value[29], tb_top.max_cont_value[28], tb_top.max_cont_value[27]
+tb_top.max_cont_value[26], tb_top.max_cont_value[25], tb_top.max_cont_value[24]
+tb_top.max_cont_value[23], tb_top.max_cont_value[22], tb_top.max_cont_value[21]
+tb_top.max_cont_value[20], tb_top.max_cont_value[19], tb_top.max_cont_value[18]
+tb_top.max_cont_value[17], tb_top.max_cont_value[16], tb_top.max_cont_value[15]
+tb_top.max_cont_value[14], tb_top.max_cont_value[13], tb_top.max_cont_value[12]
+tb_top.max_cont_value[11], tb_top.max_cont_value[10], tb_top.max_cont_value[9]
+tb_top.max_cont_value[8], tb_top.max_cont_value[7], tb_top.max_cont_value[6]
+tb_top.max_cont_value[5], tb_top.max_cont_value[4], tb_top.max_cont_value[3]
+tb_top.max_cont_value[2], tb_top.point_detected_count[31], tb_top.point_detected_count[30]
+tb_top.point_detected_count[29], tb_top.point_detected_count[28], tb_top.point_detected_count[27]
+tb_top.point_detected_count[26], tb_top.point_detected_count[25], tb_top.point_detected_count[24]
+tb_top.point_detected_count[23], tb_top.point_detected_count[22], tb_top.point_detected_count[21]
+tb_top.point_detected_count[20], tb_top.point_detected_count[19], tb_top.point_detected_count[18]
+tb_top.point_detected_count[17], tb_top.point_detected_count[16], tb_top.point_detected_count[15]
+tb_top.point_detected_count[14], tb_top.point_detected_count[13], tb_top.point_detected_count[12]
+tb_top.point_detected_count[11], tb_top.point_detected_count[10], tb_top.prev_punti_retta[7]
+tb_top.prev_punti_retta[6], tb_top.prev_punti_retta[5], tb_top.prev_punti_retta[4]
+tb_top.prev_punti_retta[3], tb_top.prev_punti_retta[1], tb_top.prev_punti_retta[0]
+tb_top.start_count[31], tb_top.start_count[30], tb_top.start_count[29], tb_top.start_count[28]
+tb_top.start_count[27], tb_top.start_count[26], tb_top.start_count[25], tb_top.start_count[24]
+tb_top.start_count[23], tb_top.start_count[22], tb_top.start_count[21], tb_top.start_count[20]
+tb_top.start_count[19], tb_top.start_count[18], tb_top.start_count[17], tb_top.start_count[16]
+tb_top.start_count[15], tb_top.start_count[14], tb_top.start_count[13], tb_top.start_count[12]
+tb_top.state_calc_retta_count[31], tb_top.state_calc_retta_count[30]
+tb_top.state_calc_retta_count[29], tb_top.state_calc_retta_count[28]
+tb_top.state_calc_retta_count[27], tb_top.state_calc_retta_count[26]
+tb_top.state_calc_retta_count[25], tb_top.state_calc_retta_count[24]
+tb_top.state_calc_retta_count[23], tb_top.state_calc_retta_count[22]
+tb_top.state_calc_retta_count[21], tb_top.state_calc_retta_count[20]
+tb_top.state_calc_retta_count[19], tb_top.state_calc_retta_count[18]
+tb_top.state_calc_retta_count[17], tb_top.state_calc_retta_count[16]
+tb_top.state_calc_retta_count[15], tb_top.state_calc_retta_count[14]
+tb_top.state_calc_retta_count[13], tb_top.state_calc_retta_count[12]
+tb_top.state_calc_retta_count[11], tb_top.state_incrementa_count[31]
+tb_top.state_incrementa_count[30], tb_top.state_incrementa_count[29]
+tb_top.state_incrementa_count[28], tb_top.state_incrementa_count[27]
+tb_top.state_incrementa_count[26], tb_top.state_incrementa_count[25]
+tb_top.state_incrementa_count[24], tb_top.state_incrementa_count[23]
+tb_top.state_incrementa_count[22], tb_top.state_incrementa_count[21]
+tb_top.state_incrementa_count[20], tb_top.state_incrementa_count[19]
+tb_top.state_incrementa_count[18], tb_top.state_incrementa_count[17]
+tb_top.state_incrementa_count[16], tb_top.state_incrementa_count[15]
+tb_top.state_incrementa_count[14], tb_top.state_incrementa_count[13]
+tb_top.state_incrementa_count[12], tb_top.state_incrementa_count[11], tb_top.state_load_x_count[31]
+tb_top.state_load_x_count[30], tb_top.state_load_x_count[29], tb_top.state_load_x_count[28]
+tb_top.state_load_x_count[27], tb_top.state_load_x_count[26], tb_top.state_load_x_count[25]
+tb_top.state_load_x_count[24], tb_top.state_load_x_count[23], tb_top.state_load_x_count[22]
+tb_top.state_load_x_count[21], tb_top.state_load_x_count[20], tb_top.state_load_x_count[19]
+tb_top.state_load_x_count[18], tb_top.state_load_x_count[17], tb_top.state_load_x_count[16]
+tb_top.state_load_x_count[15], tb_top.state_load_x_count[14], tb_top.state_load_x_count[13]
+tb_top.state_load_x_count[12], tb_top.state_load_x_count[11], tb_top.state_load_y_count[31]
+tb_top.state_load_y_count[30], tb_top.state_load_y_count[29], tb_top.state_load_y_count[28]
+tb_top.state_load_y_count[27], tb_top.state_load_y_count[26], tb_top.state_load_y_count[25]
+tb_top.state_load_y_count[24], tb_top.state_load_y_count[23], tb_top.state_load_y_count[22]
+tb_top.state_load_y_count[21], tb_top.state_load_y_count[20], tb_top.state_load_y_count[19]
+tb_top.state_load_y_count[18], tb_top.state_load_y_count[17], tb_top.state_load_y_count[16]
+tb_top.state_load_y_count[15], tb_top.state_load_y_count[14], tb_top.state_load_y_count[13]
+tb_top.state_load_y_count[12], tb_top.state_load_y_count[11], tb_top.state_reset_count[31]
+tb_top.state_reset_count[30], tb_top.state_reset_count[29], tb_top.state_reset_count[28]
+tb_top.state_reset_count[27], tb_top.state_reset_count[26], tb_top.state_reset_count[25]
+tb_top.state_reset_count[24], tb_top.state_reset_count[23], tb_top.state_reset_count[22]
+tb_top.state_reset_count[21], tb_top.state_reset_count[20], tb_top.state_reset_count[19]
+tb_top.state_reset_count[18], tb_top.state_reset_count[17], tb_top.state_reset_count[16]
+tb_top.state_reset_count[15], tb_top.state_reset_count[14], tb_top.state_reset_count[13]
+tb_top.state_reset_count[12], tb_top.state_reset_count[11], tb_top.state_reset_count[10]
+tb_top.state_reset_count[9], tb_top.state_reset_count[8], tb_top.state_reset_count[7]
+tb_top.state_reset_count[6], tb_top.state_reset_count[5], tb_top.state_reset_count[4]
+tb_top.state_reset_count[3], tb_top.state_reset_count[2], tb_top.state_reset_count[1]
+tb_top.state_start_count[31], tb_top.state_start_count[30], tb_top.state_start_count[29]
+tb_top.state_start_count[28], tb_top.state_start_count[27], tb_top.state_start_count[26]
+tb_top.state_start_count[25], tb_top.state_start_count[24], tb_top.state_start_count[23]
+tb_top.state_start_count[22], tb_top.state_start_count[21], tb_top.state_start_count[20]
+tb_top.state_start_count[19], tb_top.state_start_count[18], tb_top.state_start_count[17]
+tb_top.state_start_count[16], tb_top.state_start_count[15], tb_top.state_start_count[14]
+tb_top.state_start_count[13], tb_top.state_start_count[12], tb_top.state_start_count[11]
+tb_top.state_start_count[10], tb_top.state_start_count[9], tb_top.state_update_mar_count[31]
+tb_top.state_update_mar_count[30], tb_top.state_update_mar_count[29]
+tb_top.state_update_mar_count[28], tb_top.state_update_mar_count[27]
+tb_top.state_update_mar_count[26], tb_top.state_update_mar_count[25]
+tb_top.state_update_mar_count[24], tb_top.state_update_mar_count[23]
+tb_top.state_update_mar_count[22], tb_top.state_update_mar_count[21]
+tb_top.state_update_mar_count[20], tb_top.state_update_mar_count[19]
+tb_top.state_update_mar_count[18], tb_top.state_update_mar_count[17]
+tb_top.state_update_mar_count[16], tb_top.state_update_mar_count[15]
+tb_top.state_update_mar_count[14], tb_top.state_update_mar_count[13]
+tb_top.state_update_mar_count[12], tb_top.state_update_mar_count[11], tb_top.rst_n, dut.reset
+tb_top.state_reset_count[0], tb_top.max_cont_value[1], tb_top.max_cont_value[0]

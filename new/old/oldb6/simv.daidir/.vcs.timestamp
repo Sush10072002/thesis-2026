@@ -1,0 +1,129 @@
+0
+35
++cli+1
++define+SIM
++itf+/tools/software/synopsys/vcs/latest/linux64/lib/vcsdp.tab
++memcbk
++v2k
++vcsd
++vpi
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -fPIC -O -I/tools/software/synopsys/vcs/latest/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mexternalobj=
+-Mldflags= -rdynamic
+-Mobjects= /tools/software/synopsys/vcs/latest/linux64/lib/libvirsim.so /tools/software/synopsys/vcs/latest/linux64/lib/liberrorinf.so /tools/software/synopsys/vcs/latest/linux64/lib/libsnpsmalloc.so /tools/software/synopsys/vcs/latest/linux64/lib/libvfs.so
+-Mout=simv
+-Msaverestoreobj=/tools/software/synopsys/vcs/latest/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=-ldl
+-Mvcsaceobjs=
+-Mxcflags= -pipe -fPIC -I/tools/software/synopsys/vcs/latest/include
+-Mxllcflags=
+-Xcbug=0x1
+-debug=1
+-full64
+-gen_obj
+-o simv
+-picarchive
+-timescale=1ns/1ps
+/tools/software/synopsys/vcs/latest/linux64/bin/vcs1
+simv
+rtl/b06.v
+tb/tb_top.v
+78
+which_declare=declare -f
+_CE_M=
+_CE_CONDA=
+XDG_SESSION_ID=3387
+XDG_RUNTIME_DIR=/run/user/3444048
+XDG_DATA_DIRS=/nethome/sravikanth3/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+WV_HOME=/tools/software/synopsys/wv/latest
+VMR_MODE_FLAG=64
+VERDI_HOME=/tools/software/synopsys/verdi/latest
+VENDOR=unknown
+VCS_PYTHON3=/tools/software/synopsys/vcs/latest/linux64/bin/Python3/bin/python3
+VCS_PATHMAP_PRELOAD_DONE=1
+VCS_MX_HOME_INTERNAL=1
+VCS_MODE_FLAG=64
+VCS_INTERNAL_CONVERTEDLIBS=
+VCS_HOME=/tools/software/synopsys/vcs/latest
+VCS_EXEC_DONE=1
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux64
+VCSMX_HOME=/tools/software/synopsys/vcs/latest
+UNAME=/bin/uname
+TOOL_HOME=/tools/software/synopsys/vcs/latest/linux64
+TK_LIBRARY=/tools/software/synopsys/vcs/latest/etc/auxx/tcllib/tk8.4/library
+S_COLORS=auto
+SYNOPSYS_LC_ROOT=/tools/software/synopsys/lc/latest
+SYN=/tools/software/synopsys
+SSH_TTY=/dev/pts/80
+SSH_CONNECTION=10.2.64.48 64781 130.207.232.27 22
+SSH_CLIENT=10.2.64.48 64781 22
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+SNPS_VCS_PYTHON3=/tools/software/synopsys/vcs/latest/linux64/bin/Python3/bin/python3
+SNPS_VCS_CLANG_PATH=/tools/software/synopsys/vcs/latest/linux64/clang
+SNPS_INTERNAL_VCS_LINUX_OS=linux
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+RSOFT_PROGRAMPATH=/tools/software/synopsys/photonicsolutions/latest/rsoft/bin
+REMOTEHOST=10.2.64.48
+PHOTONICS_SOLUTIONS_VERSION=latest
+PHOTONICS_SOLUTIONS_ROOT=/tools/software/synopsys/photonicsolutions
+OVA_UUM=0
+OSTYPE=linux
+OPTO_LINK_BASE=/tools/software/synopsys/photonicsolutions/latest/optodesigner/bin
+MODULES_USE_COMPAT_VERSION=0
+MODULES_RUN_QUARANTINE=LD_LIBRARY_PATH LD_PRELOAD
+MODULES_CMD=/usr/share/Modules/libexec/modulecmd.tcl
+MODULESHOME=/usr/share/Modules
+MODULEPATH_modshare=/usr/share/Modules/modulefiles:2:/etc/modulefiles:2:/usr/share/modulefiles:2
+MODULEPATH=/etc/scl/modulefiles:/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles
+MLM_LICENSE_FILE=1711@matlablic.ecs.gatech.edu
+MGLS_LICENSE_FILE=1717@ece-linlic.ece.gatech.edu
+LOADEDMODULES=
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+LC_ALL=C
+KRB5CCNAME=FILE:/tmp/krb5cc_3444048_UCsMg5
+KDEDIRS=/usr
+ICV_HOME_DIR=/tools/software/synopsys/icvalidator/latest
+HOSTTYPE=x86_64-linux
+HISTCONTROL=ignoredups
+GROUP=_gtperson_posix_groups_a-i_oit_departmental_gt
+GOLDENGATE_LICENSE_FILE=1812@ece-linlic.ece.gatech.edu
+GDK_BACKEND=x11
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-jrRgHv10Ne,guid=5fa0fbe5051200d51a4c5d13691cefb4
+CONDA_SHLVL=1
+CONDA_PYTHON_EXE=/opt/conda/bin/python
+CONDA_PROMPT_MODIFIER=(base) 
+CONDA_PREFIX=/opt/conda
+CONDA_EXE=/opt/conda/bin/conda
+CONDA_DEFAULT_ENV=base
+CDS_LIC_FILE=5280@ece-linlic.ece.gatech.edu
+BASH_FUNC_which%%=() {  ( alias;_ eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@_}
+BASH_FUNC_switchml%%=() {  typeset swfound=1;_ if [ "${MODULES_USE_COMPAT_VERSION:-0}" = '1' ]; then_ typeset swname='main';_ if [ -e /usr/share/Modules/libexec/modulecmd.tcl ]; then_ typeset swfound=0;_ unset MODULES_USE_COMPAT_VERSION;_ fi;_ else_ typeset swname='compatibility';_ if [ -e /usr/share/Modules/libexec/modulecmd-compat ]; then_ typeset swfound=0;_ MODULES_USE_COMPAT_VERSION=1;_ export MODULES_USE_COMPAT_VERSION;_ fi;_ fi;_ if [ $swfound -eq 0 ]; then_ echo "Switching to Modules $swname version";_ source /usr/share/Modules/init/bash;_ else_ echo "Cannot switch to Modules $swname version, command not found";_ return 1;_ fi_}
+BASH_FUNC_scl%%=() {  if [ "$1" = "load" -o "$1" = "unload" ]; then_ eval "module $@";_ else_ /usr/bin/scl "$@";_ fi_}
+BASH_FUNC_module%%=() {  _module_raw "$@" 2>&1_}
+BASH_FUNC_ml%%=() {  module ml "$@"_}
+BASH_FUNC__module_raw%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBUG:-0}" = '1' ]; then_ case "$-" in _ *v*x*)_ set +vx;_ _mlshdbg='vx'_ ;;_ *v*)_ set +v;_ _mlshdbg='v'_ ;;_ *x*)_ set +x;_ _mlshdbg='x'_ ;;_ *)_ _mlshdbg=''_ ;;_ esac;_ fi;_ unset _mlre _mlIFS;_ if [ -n "${IFS+x}" ]; then_ _mlIFS=$IFS;_ fi;_ IFS=' ';_ for _mlv in ${MODULES_RUN_QUARANTINE:-};_ do_ if [ "${_mlv}" = "${_mlv##*[!A-Za-z0-9_]}" -a "${_mlv}" = "${_mlv#[0-9]}" ]; then_ if [ -n "`eval 'echo ${'$_mlv'+x}'`" ]; then_ _mlre="${_mlre:-}${_mlv}_modquar='`eval 'echo ${'$_mlv'}'`' ";_ fi;_ _mlrv="MODULES_RUNENV_${_mlv}";_ _mlre="${_mlre:-}${_mlv}='`eval 'echo ${'$_mlrv':-}'`' ";_ fi;_ done;_ if [ -n "${_mlre:-}" ]; then_ eval `eval ${_mlre} /usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash '"$@"'`;_ else_ eval `/usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash "$@"`;_ fi;_ _mlstatus=$?;_ if [ -n "${_mlIFS+x}" ]; then_ IFS=$_mlIFS;_ else_ unset IFS;_ fi;_ unset _mlre _mlv _mlrv _mlIFS;_ if [ -n "${_mlshdbg:-}" ]; then_ set -$_mlshdbg;_ fi;_ unset _mlshdbg;_ return $_mlstatus_}
+ARCH=linux
+AGILEESOFD_LICENSE_FILE=1812@ece-linlic.ece.gatech.edu
+0
+0
+3
+1763510990 tb/tb_top.v
+1763510854 rtl/b06.v
+1740888368 /tools/software/synopsys/vcs/latest/linux64/lib/vcsdp.tab
+4
+1740891987 /tools/software/synopsys/vcs/latest/linux64/lib/libvirsim.so
+1740889567 /tools/software/synopsys/vcs/latest/linux64/lib/liberrorinf.so
+1740889560 /tools/software/synopsys/vcs/latest/linux64/lib/libsnpsmalloc.so
+1740889556 /tools/software/synopsys/vcs/latest/linux64/lib/libvfs.so
+1763511043 simv.daidir
+-1 partitionlib

@@ -1,0 +1,5 @@
+{"vcs1":{"timestamp_begin":1770414934.105962213, "rt":0.22, "ut":0.06, "st":0.08}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1770414933.190434669}
+{"VCS_COMP_START_TIME": 1770414933.190434669}
+{"VCS_COMP_END_TIME": 1770414934.438175164}
+{"VCS_USER_OPTIONS": "-full64 +v2k -timescale=1ns/1ps -debug_pp +define+SIM -o simv rtl/b10.v tb/tb_top.v"}

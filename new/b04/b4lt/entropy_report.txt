@@ -1,0 +1,117 @@
+SINGLE-BIT SIGNALS
++----------------------+----------+----------+-------+-------+---------+
+| Signal               | Count(0) | Count(1) | p(0)  | p(1)  | Entropy |
++----------------------+----------+----------+-------+-------+---------+
+| dut.AVE              | 1849     | 1926     | 0.490 | 0.510 | 1.000   |
+| dut.AVERAGE          | 1847     | 1929     | 0.489 | 0.511 | 1.000   |
+| dut.CLOCK            | 1888     | 1888     | 0.500 | 0.500 | 1.000   |
+| dut.ENA              | 1895     | 1880     | 0.502 | 0.498 | 1.000   |
+| dut.ENABLE           | 1896     | 1880     | 0.502 | 0.498 | 1.000   |
+| dut.RES              | 1869     | 1906     | 0.495 | 0.505 | 1.000   |
+| dut.RESET            | 3771     | 4        | 0.999 | 0.001 | 0.012   |
+| dut.RESTART          | 1867     | 1909     | 0.494 | 0.506 | 1.000   |
+| dut.testmode         | 1903     | 1873     | 0.504 | 0.496 | 1.000   |
+| tb_top.prev_testmode | 1905     | 1871     | 0.505 | 0.495 | 1.000   |
+| tb_top.rst_n         | 4        | 3772     | 0.001 | 0.999 | 0.012   |
++----------------------+----------+----------+-------+-------+---------+
+
+MULTI-BIT BUSES
++-----------------------+-----------+-----------------+--------------+-------------------+-------+
+| Signal                | Bit Count | Average Entropy | Min. Entropy | #low-entropy bits | C(B)  |
++-----------------------+-----------+-----------------+--------------+-------------------+-------+
+| dut.DATA_IN           | 8         | 1.000           | 0.999        | 0                 | 1.000 |
+| dut.DATA_OUT          | 8         | 0.534           | 0.133        | 2                 | 0.620 |
+| dut.REG1              | 32        | 0.805           | 0.771        | 0                 | 0.883 |
+| dut.REG2              | 32        | 0.545           | 0.538        | 0                 | 0.727 |
+| dut.REG3              | 32        | 0.354           | 0.314        | 0                 | 0.612 |
+| dut.REG4              | 32        | 0.224           | 0.165        | 0                 | 0.534 |
+| dut.REGD              | 32        | 0.180           | 0.000        | 25                | 0.195 |
+| dut.REGD_original     | 32        | 0.217           | 0.000        | 25                | 0.217 |
+| dut.REGD_scanFF       | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| dut.RLAST             | 32        | 0.634           | 0.588        | 0                 | 0.780 |
+| dut.RMAX              | 32        | 0.726           | 0.695        | 0                 | 0.836 |
+| dut.RMAX_original     | 32        | 0.961           | 0.953        | 0                 | 0.977 |
+| dut.RMAX_scanFF       | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| dut.RMIN              | 32        | 0.908           | 0.748        | 0                 | 0.945 |
+| dut.RMIN_original     | 32        | 0.907           | 0.882        | 0                 | 0.944 |
+| dut.RMIN_scanFF       | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| dut.stato             | 2         | 0.813           | 0.807        | 0                 | 0.888 |
+| dut.stato_original    | 2         | 1.000           | 1.000        | 0                 | 1.000 |
+| dut.stato_scanFF      | 2         | 0.000           | 0.000        | 2                 | 0.000 |
+| dut.temp              | 32        | 0.996           | 0.946        | 0                 | 0.998 |
+| dut.test              | 32        | 0.996           | 0.946        | 0                 | 0.998 |
+| state_name.state      | 2         | 0.000           | 0.000        | 2                 | 0.000 |
+| state_name.state_name | 64        | 0.002           | 0.000        | 64                | 0.001 |
+| tb_top.DATA_OUT       | 8         | 0.534           | 0.133        | 2                 | 0.620 |
+| tb_top.file           | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| tb_top.i              | 32        | 0.351           | 0.000        | 20                | 0.361 |
+| tb_top.prev_DATA_OUT  | 8         | 0.534           | 0.133        | 2                 | 0.620 |
+| tb_top.prev_RMAX      | 32        | 0.726           | 0.695        | 0                 | 0.836 |
+| tb_top.prev_RMIN      | 32        | 0.908           | 0.748        | 0                 | 0.945 |
++-----------------------+-----------+-----------------+--------------+-------------------+-------+
+
+scan recommendations for signals (H < 0.14):
+dut.REGD[31], dut.REGD[30], dut.REGD[29], dut.REGD[28], dut.REGD[27], dut.REGD[26], dut.REGD[25]
+dut.REGD[24], dut.REGD[23], dut.REGD[22], dut.REGD[21], dut.REGD[20], dut.REGD[19], dut.REGD[18]
+dut.REGD[17], dut.REGD[16], dut.REGD[15], dut.REGD[14], dut.REGD[13], dut.REGD[12], dut.REGD[11]
+dut.REGD[10], dut.REGD[9], dut.REGD[8], dut.REGD[7], dut.REGD_original[31], dut.REGD_original[30]
+dut.REGD_original[29], dut.REGD_original[28], dut.REGD_original[27], dut.REGD_original[26]
+dut.REGD_original[25], dut.REGD_original[24], dut.REGD_original[23], dut.REGD_original[22]
+dut.REGD_original[21], dut.REGD_original[20], dut.REGD_original[19], dut.REGD_original[18]
+dut.REGD_original[17], dut.REGD_original[16], dut.REGD_original[15], dut.REGD_original[14]
+dut.REGD_original[13], dut.REGD_original[12], dut.REGD_original[11], dut.REGD_original[10]
+dut.REGD_original[9], dut.REGD_original[8], dut.REGD_original[7], dut.REGD_scanFF[31]
+dut.REGD_scanFF[30], dut.REGD_scanFF[29], dut.REGD_scanFF[28], dut.REGD_scanFF[27]
+dut.REGD_scanFF[26], dut.REGD_scanFF[25], dut.REGD_scanFF[24], dut.REGD_scanFF[23]
+dut.REGD_scanFF[22], dut.REGD_scanFF[21], dut.REGD_scanFF[20], dut.REGD_scanFF[19]
+dut.REGD_scanFF[18], dut.REGD_scanFF[17], dut.REGD_scanFF[16], dut.REGD_scanFF[15]
+dut.REGD_scanFF[14], dut.REGD_scanFF[13], dut.REGD_scanFF[12], dut.REGD_scanFF[11]
+dut.REGD_scanFF[10], dut.REGD_scanFF[9], dut.REGD_scanFF[8], dut.REGD_scanFF[7], dut.REGD_scanFF[6]
+dut.REGD_scanFF[5], dut.REGD_scanFF[4], dut.REGD_scanFF[3], dut.REGD_scanFF[2], dut.REGD_scanFF[1]
+dut.REGD_scanFF[0], dut.RMAX_scanFF[31], dut.RMAX_scanFF[30], dut.RMAX_scanFF[29]
+dut.RMAX_scanFF[28], dut.RMAX_scanFF[27], dut.RMAX_scanFF[26], dut.RMAX_scanFF[25]
+dut.RMAX_scanFF[24], dut.RMAX_scanFF[23], dut.RMAX_scanFF[22], dut.RMAX_scanFF[21]
+dut.RMAX_scanFF[20], dut.RMAX_scanFF[19], dut.RMAX_scanFF[18], dut.RMAX_scanFF[17]
+dut.RMAX_scanFF[16], dut.RMAX_scanFF[15], dut.RMAX_scanFF[14], dut.RMAX_scanFF[13]
+dut.RMAX_scanFF[12], dut.RMAX_scanFF[11], dut.RMAX_scanFF[10], dut.RMAX_scanFF[9]
+dut.RMAX_scanFF[8], dut.RMAX_scanFF[7], dut.RMAX_scanFF[6], dut.RMAX_scanFF[5], dut.RMAX_scanFF[4]
+dut.RMAX_scanFF[3], dut.RMAX_scanFF[2], dut.RMAX_scanFF[1], dut.RMAX_scanFF[0], dut.RMIN_scanFF[31]
+dut.RMIN_scanFF[30], dut.RMIN_scanFF[29], dut.RMIN_scanFF[28], dut.RMIN_scanFF[27]
+dut.RMIN_scanFF[26], dut.RMIN_scanFF[25], dut.RMIN_scanFF[24], dut.RMIN_scanFF[23]
+dut.RMIN_scanFF[22], dut.RMIN_scanFF[21], dut.RMIN_scanFF[20], dut.RMIN_scanFF[19]
+dut.RMIN_scanFF[18], dut.RMIN_scanFF[17], dut.RMIN_scanFF[16], dut.RMIN_scanFF[15]
+dut.RMIN_scanFF[14], dut.RMIN_scanFF[13], dut.RMIN_scanFF[12], dut.RMIN_scanFF[11]
+dut.RMIN_scanFF[10], dut.RMIN_scanFF[9], dut.RMIN_scanFF[8], dut.RMIN_scanFF[7], dut.RMIN_scanFF[6]
+dut.RMIN_scanFF[5], dut.RMIN_scanFF[4], dut.RMIN_scanFF[3], dut.RMIN_scanFF[2], dut.RMIN_scanFF[1]
+dut.RMIN_scanFF[0], dut.stato_scanFF[1], dut.stato_scanFF[0], state_name.state[1]
+state_name.state[0], state_name.state_name[63], state_name.state_name[62], state_name.state_name[61]
+state_name.state_name[60], state_name.state_name[59], state_name.state_name[58]
+state_name.state_name[57], state_name.state_name[56], state_name.state_name[55]
+state_name.state_name[54], state_name.state_name[53], state_name.state_name[52]
+state_name.state_name[51], state_name.state_name[50], state_name.state_name[49]
+state_name.state_name[48], state_name.state_name[47], state_name.state_name[46]
+state_name.state_name[45], state_name.state_name[44], state_name.state_name[43]
+state_name.state_name[42], state_name.state_name[41], state_name.state_name[40]
+state_name.state_name[39], state_name.state_name[38], state_name.state_name[37]
+state_name.state_name[36], state_name.state_name[35], state_name.state_name[34]
+state_name.state_name[33], state_name.state_name[32], state_name.state_name[31]
+state_name.state_name[30], state_name.state_name[29], state_name.state_name[28]
+state_name.state_name[27], state_name.state_name[26], state_name.state_name[25]
+state_name.state_name[24], state_name.state_name[23], state_name.state_name[22]
+state_name.state_name[21], state_name.state_name[20], state_name.state_name[19]
+state_name.state_name[18], state_name.state_name[17], state_name.state_name[16]
+state_name.state_name[15], state_name.state_name[11], state_name.state_name[10]
+state_name.state_name[7], state_name.state_name[5], state_name.state_name[4]
+state_name.state_name[3], state_name.state_name[2], state_name.state_name[1], tb_top.file[31]
+tb_top.file[30], tb_top.file[29], tb_top.file[28], tb_top.file[27], tb_top.file[26], tb_top.file[25]
+tb_top.file[24], tb_top.file[23], tb_top.file[22], tb_top.file[21], tb_top.file[20], tb_top.file[19]
+tb_top.file[18], tb_top.file[17], tb_top.file[16], tb_top.file[15], tb_top.file[14], tb_top.file[13]
+tb_top.file[12], tb_top.file[11], tb_top.file[10], tb_top.file[9], tb_top.file[8], tb_top.file[7]
+tb_top.file[6], tb_top.file[5], tb_top.file[4], tb_top.file[3], tb_top.file[2], tb_top.file[1]
+tb_top.file[0], tb_top.i[31], tb_top.i[30], tb_top.i[29], tb_top.i[28], tb_top.i[27], tb_top.i[26]
+tb_top.i[25], tb_top.i[24], tb_top.i[23], tb_top.i[22], tb_top.i[21], tb_top.i[20], tb_top.i[19]
+tb_top.i[18], tb_top.i[17], tb_top.i[16], tb_top.i[15], tb_top.i[14], tb_top.i[13], tb_top.i[12]
+tb_top.rst_n, dut.RESET, state_name.state_name[14], state_name.state_name[13]
+state_name.state_name[12], state_name.state_name[9], state_name.state_name[8]
+state_name.state_name[6], state_name.state_name[0], tb_top.DATA_OUT[7], tb_top.DATA_OUT[6]
+tb_top.prev_DATA_OUT[7], tb_top.prev_DATA_OUT[6], dut.DATA_OUT[7], dut.DATA_OUT[6]

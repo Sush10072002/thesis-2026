@@ -1,0 +1,83 @@
+SINGLE-BIT SIGNALS
++--------------+----------+----------+-------+-------+---------+
+| Signal       | Count(0) | Count(1) | p(0)  | p(1)  | Entropy |
++--------------+----------+----------+-------+-------+---------+
+| dut.clock    | 3613     | 3612     | 0.500 | 0.500 | 1.000   |
+| dut.reset    | 7220     | 4        | 0.999 | 0.001 | 0.007   |
+| dut.x        | 3573     | 3652     | 0.495 | 0.505 | 1.000   |
+| dut.y        | 3947     | 3278     | 0.546 | 0.454 | 0.994   |
+| tb_top.rst_n | 4        | 7221     | 0.001 | 0.999 | 0.007   |
++--------------+----------+----------+-------+-------+---------+
+
+MULTI-BIT BUSES
++--------------------------+-----------+-----------------+--------------+-------------------+-------+
+| Signal                   | Bit Count | Average Entropy | Min. Entropy | #low-entropy bits | C(B)  |
++--------------------------+-----------+-----------------+--------------+-------------------+-------+
+| dut.d_in                 | 9         | 0.903           | 0.685        | 0                 | 0.942 |
+| dut.d_out                | 8         | 0.679           | 0.269        | 0                 | 0.808 |
+| dut.old                  | 8         | 0.998           | 0.995        | 0                 | 0.999 |
+| dut.stato                | 3         | 0.241           | 0.000        | 2                 | 0.278 |
+| tb_top.file              | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| tb_top.i                 | 32        | 0.374           | 0.000        | 20                | 0.374 |
+| tb_top.j                 | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| tb_top.output_bit_count  | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| tb_top.output_byte       | 8         | 0.000           | 0.000        | 8                 | 0.000 |
+| tb_top.output_byte_count | 32        | 0.272           | 0.000        | 23                | 0.276 |
+| tb_top.packet_id         | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| tb_top.prev_d_in         | 9         | 0.903           | 0.685        | 0                 | 0.942 |
+| tb_top.prev_stato        | 3         | 0.241           | 0.000        | 2                 | 0.278 |
+| tb_top.shift_count       | 32        | 0.003           | 0.000        | 32                | 0.002 |
++--------------------------+-----------+-----------------+--------------+-------------------+-------+
+
+scan recommendations for signals (H < 0.14):
+dut.stato[2], tb_top.file[31], tb_top.file[30], tb_top.file[29], tb_top.file[28], tb_top.file[27]
+tb_top.file[26], tb_top.file[25], tb_top.file[24], tb_top.file[23], tb_top.file[22], tb_top.file[21]
+tb_top.file[20], tb_top.file[19], tb_top.file[18], tb_top.file[17], tb_top.file[16], tb_top.file[15]
+tb_top.file[14], tb_top.file[13], tb_top.file[12], tb_top.file[11], tb_top.file[10], tb_top.file[9]
+tb_top.file[8], tb_top.file[7], tb_top.file[6], tb_top.file[5], tb_top.file[4], tb_top.file[3]
+tb_top.file[2], tb_top.file[1], tb_top.file[0], tb_top.i[31], tb_top.i[30], tb_top.i[29]
+tb_top.i[28], tb_top.i[27], tb_top.i[26], tb_top.i[25], tb_top.i[24], tb_top.i[23], tb_top.i[22]
+tb_top.i[21], tb_top.i[20], tb_top.i[19], tb_top.i[18], tb_top.i[17], tb_top.i[16], tb_top.i[15]
+tb_top.i[14], tb_top.i[13], tb_top.i[12], tb_top.j[31], tb_top.j[30], tb_top.j[29], tb_top.j[28]
+tb_top.j[27], tb_top.j[26], tb_top.j[25], tb_top.j[24], tb_top.j[23], tb_top.j[22], tb_top.j[21]
+tb_top.j[20], tb_top.j[19], tb_top.j[18], tb_top.j[17], tb_top.j[16], tb_top.j[15], tb_top.j[14]
+tb_top.j[13], tb_top.j[12], tb_top.j[11], tb_top.j[10], tb_top.j[9], tb_top.j[8], tb_top.j[7]
+tb_top.j[6], tb_top.j[5], tb_top.j[4], tb_top.j[3], tb_top.j[2], tb_top.j[1], tb_top.j[0]
+tb_top.output_bit_count[31], tb_top.output_bit_count[30], tb_top.output_bit_count[29]
+tb_top.output_bit_count[28], tb_top.output_bit_count[27], tb_top.output_bit_count[26]
+tb_top.output_bit_count[25], tb_top.output_bit_count[24], tb_top.output_bit_count[23]
+tb_top.output_bit_count[22], tb_top.output_bit_count[21], tb_top.output_bit_count[20]
+tb_top.output_bit_count[19], tb_top.output_bit_count[18], tb_top.output_bit_count[17]
+tb_top.output_bit_count[16], tb_top.output_bit_count[15], tb_top.output_bit_count[14]
+tb_top.output_bit_count[13], tb_top.output_bit_count[12], tb_top.output_bit_count[11]
+tb_top.output_bit_count[10], tb_top.output_bit_count[9], tb_top.output_bit_count[8]
+tb_top.output_bit_count[7], tb_top.output_bit_count[6], tb_top.output_bit_count[5]
+tb_top.output_bit_count[4], tb_top.output_bit_count[3], tb_top.output_bit_count[2]
+tb_top.output_bit_count[1], tb_top.output_bit_count[0], tb_top.output_byte[7], tb_top.output_byte[6]
+tb_top.output_byte[5], tb_top.output_byte[4], tb_top.output_byte[3], tb_top.output_byte[2]
+tb_top.output_byte[1], tb_top.output_byte[0], tb_top.output_byte_count[31]
+tb_top.output_byte_count[30], tb_top.output_byte_count[29], tb_top.output_byte_count[28]
+tb_top.output_byte_count[27], tb_top.output_byte_count[26], tb_top.output_byte_count[25]
+tb_top.output_byte_count[24], tb_top.output_byte_count[23], tb_top.output_byte_count[22]
+tb_top.output_byte_count[21], tb_top.output_byte_count[20], tb_top.output_byte_count[19]
+tb_top.output_byte_count[18], tb_top.output_byte_count[17], tb_top.output_byte_count[16]
+tb_top.output_byte_count[15], tb_top.output_byte_count[14], tb_top.output_byte_count[13]
+tb_top.output_byte_count[12], tb_top.output_byte_count[11], tb_top.output_byte_count[10]
+tb_top.output_byte_count[9], tb_top.packet_id[31], tb_top.packet_id[30], tb_top.packet_id[29]
+tb_top.packet_id[28], tb_top.packet_id[27], tb_top.packet_id[26], tb_top.packet_id[25]
+tb_top.packet_id[24], tb_top.packet_id[23], tb_top.packet_id[22], tb_top.packet_id[21]
+tb_top.packet_id[20], tb_top.packet_id[19], tb_top.packet_id[18], tb_top.packet_id[17]
+tb_top.packet_id[16], tb_top.packet_id[15], tb_top.packet_id[14], tb_top.packet_id[13]
+tb_top.packet_id[12], tb_top.packet_id[11], tb_top.packet_id[10], tb_top.packet_id[9]
+tb_top.packet_id[8], tb_top.packet_id[7], tb_top.packet_id[6], tb_top.packet_id[5]
+tb_top.packet_id[4], tb_top.packet_id[3], tb_top.packet_id[2], tb_top.packet_id[1]
+tb_top.packet_id[0], tb_top.prev_stato[2], tb_top.shift_count[31], tb_top.shift_count[30]
+tb_top.shift_count[29], tb_top.shift_count[28], tb_top.shift_count[27], tb_top.shift_count[26]
+tb_top.shift_count[25], tb_top.shift_count[24], tb_top.shift_count[23], tb_top.shift_count[22]
+tb_top.shift_count[21], tb_top.shift_count[20], tb_top.shift_count[19], tb_top.shift_count[18]
+tb_top.shift_count[17], tb_top.shift_count[16], tb_top.shift_count[15], tb_top.shift_count[14]
+tb_top.shift_count[13], tb_top.shift_count[12], tb_top.shift_count[11], tb_top.shift_count[10]
+tb_top.shift_count[9], tb_top.shift_count[8], tb_top.shift_count[7], tb_top.shift_count[6]
+tb_top.shift_count[5], tb_top.shift_count[4], tb_top.rst_n, dut.reset, tb_top.shift_count[1]
+tb_top.shift_count[0], tb_top.shift_count[3], tb_top.shift_count[2], dut.stato[1]
+tb_top.prev_stato[1]

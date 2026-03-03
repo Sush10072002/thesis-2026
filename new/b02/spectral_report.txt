@@ -1,0 +1,18 @@
+SPECTRAL ANALYSIS REPORT (R=16, non-overlapping windows)
+========================================================================
+Signal                                     W       T     SC_avg              Best_PO   PO_cos
+------------------------------------------------------------------------
+tb_top.file                              103   17870     1.0000 tb_top.file             1.000
+tb_top.rst_n                               1   17870     1.0116 tb_top.rst_n            1.000
+dut.reset                                  1   17870     1.0116 tb_top.rst_n            1.000
+dut.clock                                  1   17870     2.0000 tb_top.i                0.025
+tb_top.i                                  44   17870     7.5462 tb_top.i                1.000
+dut.u                                      1   17870    11.7097 tb_top.i                0.846
+dut.stato                                  7   17870    20.1535 tb_top.i                0.586
+dut.linea                                  1   17870    26.1328 tb_top.i                0.548
+
+Notes:
+  - Lower SC_avg => harder to control (strong scan candidates).
+  - PO_cos is a crude observability proxy (max cosine similarity
+    between a signal's spectrum and any PO spectrum).
+  - You’ll still rank/registers by SCC etc. outside this script.

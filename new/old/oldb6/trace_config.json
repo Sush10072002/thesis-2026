@@ -1,0 +1,12 @@
+{
+  "vcd": "run.vcd",
+  "reset": { "path": "tb_top.reset", "active": 1 },
+  "clocks": [
+    { "name": "clk", "path": "tb_top.clk", "edge": "posedge" }
+  ],
+  "signals_file": "signals.txt",
+  "warmup_cycles": 0,
+  "max_cycles": 8192,
+  "x_policy": "hold"    // hold | zero | drop
+}
+

@@ -1,0 +1,34 @@
+SPECTRAL ANALYSIS REPORT (R=16, non-overlapping windows)
+========================================================================
+Signal                                     W       T     SC_avg              Best_PO   PO_cos
+------------------------------------------------------------------------
+tb_top.error_count                         1   44325     1.0000 tb_top.error_count      1.000
+dut.RMIN                                 104   44325     1.0019 tb_top.error_count      1.000
+dut.stato                                  4   44325     1.0056 tb_top.error_count      1.000
+dut.RMAX                                  32   44325     1.0070 tb_top.error_count      1.000
+dut.RESET                                  1   44325     1.0090 tb_top.error_count      1.000
+dut.CLOCK                                  1   44325     2.0000 tb_top.DATA_OUT         0.051
+dut.test                                 104   44325     4.7985 tb_top.error_count      0.992
+dut.temp                                 104   44325     4.7985 tb_top.error_count      0.992
+tb_top.i                                  47   44325     6.8073 tb_top.i                1.000
+dut.REGD                                  32   44325     7.0241 tb_top.i                0.997
+dut.RLAST                                104   44325    10.5574 tb_top.i                0.990
+dut.REG1                                 104   44325    12.4685 tb_top.DATA_OUT         0.968
+dut.REG3                                 104   44325    12.4855 tb_top.DATA_OUT         0.968
+dut.REG2                                 104   44325    12.5240 tb_top.DATA_OUT         0.968
+dut.REG4                                 104   44325    12.5502 tb_top.DATA_OUT         0.968
+tb_top.DATA_OUT                           24   44325    18.3527 tb_top.DATA_OUT         1.000
+dut.DATA_OUT                              24   44325    18.3527 tb_top.DATA_OUT         1.000
+dut.DATA_IN                               24   44325    24.2953 tb_top.DATA_OUT         0.922
+dut.RESTART                                1   44325    26.1179 tb_top.DATA_OUT         0.873
+dut.ENA                                    1   44325    26.1465 tb_top.DATA_OUT         0.871
+dut.AVE                                    1   44325    26.1597 tb_top.DATA_OUT         0.871
+dut.AVERAGE                                1   44325    26.1855 tb_top.DATA_OUT         0.873
+dut.ENABLE                                 1   44325    26.2469 tb_top.DATA_OUT         0.871
+dut.RES                                    1   44325    26.2478 tb_top.DATA_OUT         0.873
+
+Notes:
+  - Lower SC_avg => harder to control (strong scan candidates).
+  - PO_cos is a crude observability proxy (max cosine similarity
+    between a signal's spectrum and any PO spectrum).
+  - You’ll still rank/registers by SCC etc. outside this script.

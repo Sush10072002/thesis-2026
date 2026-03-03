@@ -1,0 +1,127 @@
+[2026-02-06 16:55:33] [INFO] Auto-detecting main design file...
+[2026-02-06 16:55:33] [INFO] Detected main design file: b10.v (instantiated in tb_top.v)
+[2026-02-06 16:55:33] [INFO] ZEBRA Tournament Orchestrator Starting
+[2026-02-06 16:55:33] [INFO] Configuration: {'rtl_dir': 'rtl', 'tb_dir': 'tb', 'work_dir': 'tournament_work', 'vcd_parser': './vcdparse/verilog-vcd-parser/build/vcd-parse', 'tbgen_script': 'tbgen.py', 'analysis_script': 'analysis.py', 'entropy_threshold': 0.14, 'sc_avg_threshold': 5.0, 'po_cos_threshold': 0.5, 'change_threshold': 0.2, 'sim_cycles': 50000, 'random_seed': 1, 'vcs_path': 'vcs', 'max_tournaments': 10, 'main_design_file': 'rtl/b10.v', 'enable_rollback': True, 'min_improvement': 0.05}
+[2026-02-06 16:55:33] [INFO] 
+================================================================================
+[2026-02-06 16:55:33] [INFO] STARTING TOURNAMENT 0
+[2026-02-06 16:55:33] [INFO] ================================================================================
+
+[2026-02-06 16:55:33] [INFO] === Compiling Design (Tournament 0) ===
+[2026-02-06 16:55:33] [INFO] Executing: vcs -full64 +v2k -timescale=1ns/1ps -debug_pp +define+SIM -o simv rtl/b10.v tb/tb_top.v
+[2026-02-06 16:55:34] [INFO] Compilation successful
+[2026-02-06 16:55:34] [INFO] === Running Simulation (Tournament 0) ===
+[2026-02-06 16:55:34] [INFO] Executing: ./simv +ntb_random_seed=1 -l sim_t0.log
+[2026-02-06 16:55:35] [INFO] Simulation complete
+[2026-02-06 16:55:35] [INFO] === Parsing VCD (Tournament 0) ===
+[2026-02-06 16:55:35] [INFO] Executing VCD parser: ./vcdparse/verilog-vcd-parser/build/vcd-parse tb_top.vcd timeseries_t0.csv
+[2026-02-06 16:55:35] [DEBUG]   VCD: Parsing tb_top.vcd
+[2026-02-06 16:55:40] [DEBUG]   VCD: Parse successful.
+[2026-02-06 16:55:40] [DEBUG]   VCD: Signal count:  43
+[2026-02-06 16:55:40] [DEBUG]   VCD: Times Recorded:100006
+[2026-02-06 16:55:40] [INFO] VCD parsing completed, terminating parser...
+[2026-02-06 16:55:40] [INFO] VCD parsing complete
+[2026-02-06 16:55:40] [INFO] === Calculating Metrics (Tournament 0) ===
+[2026-02-06 16:55:40] [INFO] Executing: python3 analysis.py timeseries_t0.csv > results_t0.txt
+[2026-02-06 16:55:41] [INFO] Metrics calculation complete - results in results_t0.csv
+[2026-02-06 16:55:41] [INFO] === Parsing Metrics (Tournament 0) ===
+[2026-02-06 16:55:41] [INFO] Parsed metrics for 32 signals
+[2026-02-06 16:55:41] [DEBUG]   Sample: clock - entropy=1.0, sc_avg=2.0, po_cos=1.0
+[2026-02-06 16:55:41] [DEBUG]   Sample: ctr - entropy=0.773925, sc_avg=20.344298, po_cos=1.0
+[2026-02-06 16:55:41] [DEBUG]   Sample: cts - entropy=0.877395, sc_avg=20.381579, po_cos=1.0
+[2026-02-06 16:55:41] [DEBUG]   Sample: g_button - entropy=0.999999, sc_avg=25.535088, po_cos=1.0
+[2026-02-06 16:55:41] [DEBUG]   Sample: key - entropy=0.996038, sc_avg=26.866228, po_cos=1.0
+[2026-02-06 16:55:41] [INFO] Summary report written to tournament_work/summary_report_t0.txt
+[2026-02-06 16:55:41] [INFO] === Inserting 7 Test Points ===
+[2026-02-06 16:55:41] [INFO] Executing: python3 testpoint_inserter.py --rtl-dir rtl --candidates candidates_t0.json
+[2026-02-06 16:55:41] [INFO] Successfully inserted 7 test points
+[2026-02-06 16:55:41] [INFO] === Regenerating Testbench (Tournament 0) ===
+[2026-02-06 16:55:41] [INFO] Backed up old testbench to tournament_work/tb_top_backup_t0.v
+[2026-02-06 16:55:41] [INFO] Executing: python3 tbgen.py rtl/b10.v tb_top.v 50000
+[2026-02-06 16:55:41] [ERROR] Generated testbench (tb_top.v) not found
+[2026-02-06 16:55:41] [WARNING] Failed to regenerate testbench, but continuing
+[2026-02-06 16:55:41] [INFO] 
+Tournament 0 completed successfully
+
+[2026-02-06 16:55:41] [INFO] Continue decision: True - First tournament completed, test points inserted
+[2026-02-06 16:55:41] [INFO] 
+================================================================================
+[2026-02-06 16:55:41] [INFO] STARTING TOURNAMENT 1
+[2026-02-06 16:55:41] [INFO] ================================================================================
+
+[2026-02-06 16:55:41] [INFO] === Compiling Design (Tournament 1) ===
+[2026-02-06 16:55:41] [INFO] Executing: vcs -full64 +v2k -timescale=1ns/1ps -debug_pp +define+SIM -o simv rtl/b10.v tb/tb_top.v
+[2026-02-06 16:55:43] [INFO] Compilation successful
+[2026-02-06 16:55:43] [INFO] === Running Simulation (Tournament 1) ===
+[2026-02-06 16:55:43] [INFO] Executing: ./simv +ntb_random_seed=1 -l sim_t1.log
+[2026-02-06 16:55:44] [INFO] Simulation complete
+[2026-02-06 16:55:44] [INFO] === Parsing VCD (Tournament 1) ===
+[2026-02-06 16:55:44] [INFO] Executing VCD parser: ./vcdparse/verilog-vcd-parser/build/vcd-parse tb_top.vcd timeseries_t1.csv
+[2026-02-06 16:55:44] [DEBUG]   VCD: Parsing tb_top.vcd
+[2026-02-06 16:55:49] [DEBUG]   VCD: Parse successful.
+[2026-02-06 16:55:49] [DEBUG]   VCD: Signal count:  43
+[2026-02-06 16:55:49] [DEBUG]   VCD: Times Recorded:100006
+[2026-02-06 16:55:49] [INFO] VCD parsing completed, terminating parser...
+[2026-02-06 16:55:49] [INFO] VCD parsing complete
+[2026-02-06 16:55:49] [INFO] === Calculating Metrics (Tournament 1) ===
+[2026-02-06 16:55:49] [INFO] Executing: python3 analysis.py timeseries_t1.csv > results_t1.txt
+[2026-02-06 16:55:50] [INFO] Metrics calculation complete - results in results_t1.csv
+[2026-02-06 16:55:50] [INFO] === Parsing Metrics (Tournament 1) ===
+[2026-02-06 16:55:50] [INFO] Parsed metrics for 32 signals
+[2026-02-06 16:55:50] [DEBUG]   Sample: clock - entropy=1.0, sc_avg=2.147321, po_cos=1.0
+[2026-02-06 16:55:50] [DEBUG]   Sample: ctr - entropy=0.76822, sc_avg=20.337054, po_cos=1.0
+[2026-02-06 16:55:50] [DEBUG]   Sample: cts - entropy=0.878336, sc_avg=20.337054, po_cos=1.0
+[2026-02-06 16:55:50] [DEBUG]   Sample: g_button - entropy=0.999989, sc_avg=25.433036, po_cos=1.0
+[2026-02-06 16:55:50] [DEBUG]   Sample: key - entropy=0.996255, sc_avg=26.90625, po_cos=1.0
+[2026-02-06 16:55:50] [INFO] === Checking for Metric Degradation ===
+[2026-02-06 16:55:50] [INFO]   Improved: 4
+[2026-02-06 16:55:50] [INFO]   Degraded: 0
+[2026-02-06 16:55:50] [INFO]   Unchanged: 3
+[2026-02-06 16:55:50] [INFO] Summary report written to tournament_work/summary_report_t1.txt
+[2026-02-06 16:55:50] [INFO] === Inserting 7 Test Points ===
+[2026-02-06 16:55:50] [INFO] Executing: python3 testpoint_inserter.py --rtl-dir rtl --candidates candidates_t1.json
+[2026-02-06 16:55:50] [INFO] Successfully inserted 7 test points
+[2026-02-06 16:55:50] [INFO] === Regenerating Testbench (Tournament 1) ===
+[2026-02-06 16:55:50] [INFO] Backed up old testbench to tournament_work/tb_top_backup_t1.v
+[2026-02-06 16:55:50] [INFO] Executing: python3 tbgen.py rtl/b10.v tb_top.v 50000
+[2026-02-06 16:55:50] [ERROR] Generated testbench (tb_top.v) not found
+[2026-02-06 16:55:50] [WARNING] Failed to regenerate testbench, but continuing
+[2026-02-06 16:55:50] [INFO] 
+Tournament 1 completed successfully
+
+[2026-02-06 16:55:50] [INFO] Entropy change: avg=0.035, max=1.000
+[2026-02-06 16:55:50] [INFO] Continue decision: True - Entropy change (1.000) exceeds threshold (0.2)
+[2026-02-06 16:55:50] [INFO] 
+================================================================================
+[2026-02-06 16:55:50] [INFO] STARTING TOURNAMENT 2
+[2026-02-06 16:55:50] [INFO] ================================================================================
+
+[2026-02-06 16:55:50] [INFO] === Compiling Design (Tournament 2) ===
+[2026-02-06 16:55:50] [INFO] Executing: vcs -full64 +v2k -timescale=1ns/1ps -debug_pp +define+SIM -o simv rtl/b10.v tb/tb_top.v
+[2026-02-06 16:55:53] [INFO] Compilation successful
+[2026-02-06 16:55:53] [INFO] === Running Simulation (Tournament 2) ===
+[2026-02-06 16:55:53] [INFO] Executing: ./simv +ntb_random_seed=1 -l sim_t2.log
+[2026-02-06 16:55:54] [INFO] Simulation complete
+[2026-02-06 16:55:54] [INFO] === Parsing VCD (Tournament 2) ===
+[2026-02-06 16:55:54] [INFO] Executing VCD parser: ./vcdparse/verilog-vcd-parser/build/vcd-parse tb_top.vcd timeseries_t2.csv
+[2026-02-06 16:55:54] [DEBUG]   VCD: Parsing tb_top.vcd
+[2026-02-06 16:55:58] [DEBUG]   VCD: Parse successful.
+[2026-02-06 16:55:58] [DEBUG]   VCD: Signal count:  43
+[2026-02-06 16:55:58] [DEBUG]   VCD: Times Recorded:100006
+[2026-02-06 16:55:58] [INFO] VCD parsing completed, terminating parser...
+[2026-02-06 16:55:59] [INFO] VCD parsing complete
+[2026-02-06 16:55:59] [INFO] === Calculating Metrics (Tournament 2) ===
+[2026-02-06 16:55:59] [INFO] Executing: python3 analysis.py timeseries_t2.csv > results_t2.txt
+[2026-02-06 16:55:59] [INFO] Metrics calculation complete - results in results_t2.csv
+[2026-02-06 16:55:59] [INFO] === Parsing Metrics (Tournament 2) ===
+[2026-02-06 16:55:59] [INFO] Parsed metrics for 32 signals
+[2026-02-06 16:55:59] [DEBUG]   Sample: clock - entropy=1.0, sc_avg=2.0, po_cos=1.0
+[2026-02-06 16:55:59] [DEBUG]   Sample: ctr - entropy=0.773925, sc_avg=20.344298, po_cos=1.0
+[2026-02-06 16:55:59] [DEBUG]   Sample: cts - entropy=0.877395, sc_avg=20.381579, po_cos=1.0
+[2026-02-06 16:55:59] [DEBUG]   Sample: g_button - entropy=0.999999, sc_avg=25.535088, po_cos=1.0
+[2026-02-06 16:55:59] [DEBUG]   Sample: key - entropy=0.996038, sc_avg=26.866228, po_cos=1.0
+[2026-02-06 16:55:59] [INFO] === Checking for Metric Degradation ===
+[2026-02-06 16:55:59] [INFO]   Improved: 0
+[2026-02-06 16:55:59] [INFO]   Degraded: 4
+[2026-02-06 16:55:59] [INFO]   Unchanged: 3
+[2026-02-06 16:55:59] [WARNING]   Metrics degraded/unchanged for 100.0% of signals - ROLLBACK

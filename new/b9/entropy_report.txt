@@ -1,0 +1,110 @@
+SINGLE-BIT SIGNALS
++---------------+----------+----------+-------+-------+---------+
+| Signal        | Count(0) | Count(1) | p(0)  | p(1)  | Entropy |
++---------------+----------+----------+-------+-------+---------+
+| dut.clock     | 3457     | 3456     | 0.500 | 0.500 | 1.000   |
+| dut.reset     | 6908     | 4        | 0.999 | 0.001 | 0.007   |
+| dut.x         | 3427     | 3486     | 0.496 | 0.504 | 1.000   |
+| dut.y         | 3783     | 3130     | 0.547 | 0.453 | 0.994   |
+| tb_top.prev_y | 3785     | 3127     | 0.548 | 0.452 | 0.993   |
+| tb_top.rst_n  | 4        | 6909     | 0.001 | 0.999 | 0.007   |
++---------------+----------+----------+-------+-------+---------+
+
+MULTI-BIT BUSES
++------------------------+-----------+-----------------+--------------+-------------------+-------+
+| Signal                 | Bit Count | Average Entropy | Min. Entropy | #low-entropy bits | C(B)  |
++------------------------+-----------+-----------------+--------------+-------------------+-------+
+| dut.d_in               | 9         | 0.903           | 0.684        | 0                 | 0.942 |
+| dut.d_out              | 8         | 0.678           | 0.269        | 0                 | 0.807 |
+| dut.old                | 8         | 0.998           | 0.993        | 0                 | 0.999 |
+| dut.stato              | 3         | 0.242           | 0.000        | 2                 | 0.279 |
+| state_name.state       | 3         | 0.000           | 0.000        | 3                 | 0.000 |
+| state_name.state_name  | 128       | 0.001           | 0.000        | 128               | 0.001 |
+| tb_top.file            | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| tb_top.frame_count     | 32        | 0.310           | 0.000        | 22                | 0.311 |
+| tb_top.i               | 32        | 0.375           | 0.000        | 20                | 0.375 |
+| tb_top.idle_bit_count  | 32        | 0.343           | 0.000        | 21                | 0.343 |
+| tb_top.start_bit_count | 32        | 0.339           | 0.000        | 21                | 0.341 |
+| tb_top.stop_bit_count  | 32        | 0.343           | 0.000        | 21                | 0.343 |
++------------------------+-----------+-----------------+--------------+-------------------+-------+
+
+scan recommendations for signals (H < 0.14):
+dut.stato[2], state_name.state[2], state_name.state[1], state_name.state[0]
+state_name.state_name[127], state_name.state_name[126], state_name.state_name[125]
+state_name.state_name[124], state_name.state_name[123], state_name.state_name[122]
+state_name.state_name[121], state_name.state_name[120], state_name.state_name[119]
+state_name.state_name[118], state_name.state_name[117], state_name.state_name[116]
+state_name.state_name[115], state_name.state_name[114], state_name.state_name[113]
+state_name.state_name[112], state_name.state_name[111], state_name.state_name[110]
+state_name.state_name[109], state_name.state_name[108], state_name.state_name[107]
+state_name.state_name[106], state_name.state_name[105], state_name.state_name[104]
+state_name.state_name[103], state_name.state_name[102], state_name.state_name[101]
+state_name.state_name[100], state_name.state_name[99], state_name.state_name[98]
+state_name.state_name[97], state_name.state_name[96], state_name.state_name[95]
+state_name.state_name[94], state_name.state_name[93], state_name.state_name[92]
+state_name.state_name[91], state_name.state_name[90], state_name.state_name[89]
+state_name.state_name[88], state_name.state_name[87], state_name.state_name[86]
+state_name.state_name[85], state_name.state_name[84], state_name.state_name[83]
+state_name.state_name[82], state_name.state_name[81], state_name.state_name[80]
+state_name.state_name[79], state_name.state_name[78], state_name.state_name[77]
+state_name.state_name[76], state_name.state_name[75], state_name.state_name[74]
+state_name.state_name[73], state_name.state_name[72], state_name.state_name[71]
+state_name.state_name[70], state_name.state_name[69], state_name.state_name[68]
+state_name.state_name[67], state_name.state_name[66], state_name.state_name[65]
+state_name.state_name[64], state_name.state_name[63], state_name.state_name[62]
+state_name.state_name[61], state_name.state_name[60], state_name.state_name[59]
+state_name.state_name[58], state_name.state_name[57], state_name.state_name[56]
+state_name.state_name[55], state_name.state_name[54], state_name.state_name[53]
+state_name.state_name[52], state_name.state_name[51], state_name.state_name[50]
+state_name.state_name[49], state_name.state_name[48], state_name.state_name[47]
+state_name.state_name[46], state_name.state_name[45], state_name.state_name[44]
+state_name.state_name[43], state_name.state_name[42], state_name.state_name[41]
+state_name.state_name[40], state_name.state_name[39], state_name.state_name[38]
+state_name.state_name[37], state_name.state_name[36], state_name.state_name[35]
+state_name.state_name[34], state_name.state_name[33], state_name.state_name[32]
+state_name.state_name[31], state_name.state_name[29], state_name.state_name[28]
+state_name.state_name[26], state_name.state_name[25], state_name.state_name[23]
+state_name.state_name[21], state_name.state_name[20], state_name.state_name[16]
+state_name.state_name[15], state_name.state_name[13], state_name.state_name[12]
+state_name.state_name[10], state_name.state_name[9], state_name.state_name[7]
+state_name.state_name[5], state_name.state_name[3], state_name.state_name[1]
+state_name.state_name[0], tb_top.file[31], tb_top.file[30], tb_top.file[29], tb_top.file[28]
+tb_top.file[27], tb_top.file[26], tb_top.file[25], tb_top.file[24], tb_top.file[23], tb_top.file[22]
+tb_top.file[21], tb_top.file[20], tb_top.file[19], tb_top.file[18], tb_top.file[17], tb_top.file[16]
+tb_top.file[15], tb_top.file[14], tb_top.file[13], tb_top.file[12], tb_top.file[11], tb_top.file[10]
+tb_top.file[9], tb_top.file[8], tb_top.file[7], tb_top.file[6], tb_top.file[5], tb_top.file[4]
+tb_top.file[3], tb_top.file[2], tb_top.file[1], tb_top.file[0], tb_top.frame_count[31]
+tb_top.frame_count[30], tb_top.frame_count[29], tb_top.frame_count[28], tb_top.frame_count[27]
+tb_top.frame_count[26], tb_top.frame_count[25], tb_top.frame_count[24], tb_top.frame_count[23]
+tb_top.frame_count[22], tb_top.frame_count[21], tb_top.frame_count[20], tb_top.frame_count[19]
+tb_top.frame_count[18], tb_top.frame_count[17], tb_top.frame_count[16], tb_top.frame_count[15]
+tb_top.frame_count[14], tb_top.frame_count[13], tb_top.frame_count[12], tb_top.frame_count[11]
+tb_top.frame_count[10], tb_top.i[31], tb_top.i[30], tb_top.i[29], tb_top.i[28], tb_top.i[27]
+tb_top.i[26], tb_top.i[25], tb_top.i[24], tb_top.i[23], tb_top.i[22], tb_top.i[21], tb_top.i[20]
+tb_top.i[19], tb_top.i[18], tb_top.i[17], tb_top.i[16], tb_top.i[15], tb_top.i[14], tb_top.i[13]
+tb_top.i[12], tb_top.idle_bit_count[31], tb_top.idle_bit_count[30], tb_top.idle_bit_count[29]
+tb_top.idle_bit_count[28], tb_top.idle_bit_count[27], tb_top.idle_bit_count[26]
+tb_top.idle_bit_count[25], tb_top.idle_bit_count[24], tb_top.idle_bit_count[23]
+tb_top.idle_bit_count[22], tb_top.idle_bit_count[21], tb_top.idle_bit_count[20]
+tb_top.idle_bit_count[19], tb_top.idle_bit_count[18], tb_top.idle_bit_count[17]
+tb_top.idle_bit_count[16], tb_top.idle_bit_count[15], tb_top.idle_bit_count[14]
+tb_top.idle_bit_count[13], tb_top.idle_bit_count[12], tb_top.idle_bit_count[11]
+tb_top.start_bit_count[31], tb_top.start_bit_count[30], tb_top.start_bit_count[29]
+tb_top.start_bit_count[28], tb_top.start_bit_count[27], tb_top.start_bit_count[26]
+tb_top.start_bit_count[25], tb_top.start_bit_count[24], tb_top.start_bit_count[23]
+tb_top.start_bit_count[22], tb_top.start_bit_count[21], tb_top.start_bit_count[20]
+tb_top.start_bit_count[19], tb_top.start_bit_count[18], tb_top.start_bit_count[17]
+tb_top.start_bit_count[16], tb_top.start_bit_count[15], tb_top.start_bit_count[14]
+tb_top.start_bit_count[13], tb_top.start_bit_count[12], tb_top.start_bit_count[11]
+tb_top.stop_bit_count[31], tb_top.stop_bit_count[30], tb_top.stop_bit_count[29]
+tb_top.stop_bit_count[28], tb_top.stop_bit_count[27], tb_top.stop_bit_count[26]
+tb_top.stop_bit_count[25], tb_top.stop_bit_count[24], tb_top.stop_bit_count[23]
+tb_top.stop_bit_count[22], tb_top.stop_bit_count[21], tb_top.stop_bit_count[20]
+tb_top.stop_bit_count[19], tb_top.stop_bit_count[18], tb_top.stop_bit_count[17]
+tb_top.stop_bit_count[16], tb_top.stop_bit_count[15], tb_top.stop_bit_count[14]
+tb_top.stop_bit_count[13], tb_top.stop_bit_count[12], tb_top.stop_bit_count[11], tb_top.rst_n
+dut.reset, state_name.state_name[30], state_name.state_name[27], state_name.state_name[24]
+state_name.state_name[22], state_name.state_name[19], state_name.state_name[18]
+state_name.state_name[17], state_name.state_name[14], state_name.state_name[11]
+state_name.state_name[8], state_name.state_name[6], state_name.state_name[4]
+state_name.state_name[2], dut.stato[1]

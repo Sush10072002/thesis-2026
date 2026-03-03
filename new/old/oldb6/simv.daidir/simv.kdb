@@ -1,0 +1,19 @@
+rc file Version 1.0
+
+[Design]
+COMPILE_PATH=/nethome/sravikanth3/research/new
+VCS_HOME=/tools/software/synopsys/vcs/latest
+VERDI_HOME=/tools/software/synopsys/verdi/latest
+SystemC=FALSE
+UUM=FALSE
+KDB=FALSE
+USE_NOVAS_HOME=FALSE
+COSIM=FALSE
+TOP=tb_top 
+
+[Value]
+WREALX=ffff534e50535f58
+WREALZ=ffff534e50535f5a
+
+[CompInfo]
+FLOW_OPTS=

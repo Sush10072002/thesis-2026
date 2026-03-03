@@ -1,0 +1,7 @@
+Command exited with non-zero status 255
+{"vcs1":{"timestamp_begin":1770402267.658772808, "rt":0.21, "ut":0.06, "st":0.08}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1770402266.766869946}
+{"VCS_COMP_START_TIME": 1770402266.766869946}
+{"VCS_COMP_END_TIME": 1770402268.034140215}
+{"VCS_USER_OPTIONS": "-full64 +v2k -timescale=1ns/1ps -debug_pp +define+SIM -o simv rtl/b04.v tb/tb_top.v tb/tb_top_t0.v"}
+{"vcs1": {"peak_mem": 309852}}

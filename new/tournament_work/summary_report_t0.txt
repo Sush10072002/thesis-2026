@@ -1,0 +1,67 @@
+================================================================================
+TOURNAMENT 0 SUMMARY REPORT
+================================================================================
+
+Timestamp: 2026-02-06 16:55:41
+Total signals analyzed: 32
+
+--- Entropy Statistics ---
+Signal with highest entropy: clock (1.0000)
+Signal with lowest entropy: file (0.0008)
+
+Signals below entropy threshold (0.14):
+Count: 5
+  - state: 0.0864
+  - reset: 0.0224
+  - rst_n: 0.0224
+  - sign: 0.0090
+  - file: 0.0008
+
+--- Spectral Controllability (SC_avg) Statistics ---
+Signals with lowest SC_avg (hardest to control):
+  - file: 1.0000
+  - sign: 1.0499
+  - reset: 1.1140
+  - rst_n: 1.1140
+  - last_r: 1.1996
+  - last_g: 1.2215
+  - clock: 2.0000
+  - clk: 2.0000
+  - state: 2.6062
+  - state_change_count: 3.6295
+
+Signals below SC_avg threshold (5.0): 11
+
+--- Observability (PO_cos) Statistics ---
+Signals with lowest PO_cos (hardest to observe):
+  - state_name: 0.9962
+  - voto2: 0.9963
+  - voto0: 0.9983
+  - voto3: 0.9984
+  - state: 0.9993
+  - voto1: 0.9995
+  - stato: 0.9996
+  - last_r: 1.0000
+  - last_g: 1.0000
+  - sign: 1.0000
+
+Signals below PO_cos threshold (0.5): 0
+
+--- Test Point Insertion ---
+Number of test points inserted: 7
+
+Test points inserted:
+  Control Test Points (CTP): 7
+  Observe Test Points (OTP): 0
+  Both (CTP+OTP): 0
+
+Details:
+  - last_g (CTP): entropy=0.8622, sc_avg=1.2215, po_cos=1.0000
+  - last_r (CTP): entropy=0.8607, sc_avg=1.1996, po_cos=1.0000
+  - sign (CTP): entropy=0.0090, sc_avg=1.0499, po_cos=1.0000
+  - state (CTP): entropy=0.0864, sc_avg=2.6062, po_cos=0.9993
+  - file (CTP): entropy=0.0008, sc_avg=1.0000, po_cos=1.0000
+  - i (CTP): entropy=0.3115, sc_avg=3.9657, po_cos=1.0000
+  - state_change_count (CTP): entropy=0.2782, sc_avg=3.6295, po_cos=1.0000
+
+================================================================================

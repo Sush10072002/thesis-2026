@@ -1,0 +1,141 @@
+SINGLE-BIT SIGNALS
++------------------+----------+----------+-------+-------+---------+
+| Signal           | Count(0) | Count(1) | p(0)  | p(1)  | Entropy |
++------------------+----------+----------+-------+-------+---------+
+| dut.B            | 1275     | 2679     | 0.322 | 0.678 | 0.907   |
+| dut.clock        | 1978     | 1977     | 0.500 | 0.500 | 1.000   |
+| dut.rd           | 703      | 3251     | 0.178 | 0.822 | 0.675   |
+| dut.reset        | 3950     | 4        | 0.999 | 0.001 | 0.012   |
+| dut.state        | 1979     | 1975     | 0.501 | 0.499 | 1.000   |
+| dut.wr           | 3856     | 98       | 0.975 | 0.025 | 0.168   |
+| state_name.state | 3954     | 0        | 1.000 | 0.000 | 0.000   |
+| tb_top.rst_n     | 4        | 3951     | 0.001 | 0.999 | 0.012   |
++------------------+----------+----------+-------+-------+---------+
+
+MULTI-BIT BUSES
++------------------------+-----------+-----------------+--------------+-------------------+-------+
+| Signal                 | Bit Count | Average Entropy | Min. Entropy | #low-entropy bits | C(B)  |
++------------------------+-----------+-----------------+--------------+-------------------+-------+
+| dut.IR                 | 32        | 0.987           | 0.789        | 0                 | 0.992 |
+| dut.MAR                | 32        | 0.621           | 0.000        | 12                | 0.623 |
+| dut.MBR                | 32        | 0.999           | 0.996        | 0                 | 1.000 |
+| dut.addr               | 20        | 0.995           | 0.978        | 0                 | 0.997 |
+| dut.cf                 | 32        | 0.031           | 0.000        | 31                | 0.031 |
+| dut.d                  | 32        | 0.061           | 0.000        | 30                | 0.062 |
+| dut.datai              | 32        | 1.000           | 0.998        | 0                 | 1.000 |
+| dut.datao              | 32        | 0.924           | 0.376        | 0                 | 0.955 |
+| dut.df                 | 32        | 0.094           | 0.000        | 29                | 0.094 |
+| dut.ff                 | 32        | 0.125           | 0.000        | 28                | 0.125 |
+| dut.m                  | 32        | 0.974           | 0.912        | 0                 | 0.985 |
+| dut.mf                 | 32        | 0.062           | 0.000        | 30                | 0.062 |
+| dut.r                  | 32        | 0.950           | 0.416        | 0                 | 0.970 |
+| dut.reg0               | 32        | 0.938           | 0.358        | 0                 | 0.963 |
+| dut.reg1               | 32        | 0.953           | 0.581        | 0                 | 0.972 |
+| dut.reg2               | 32        | 0.942           | 0.413        | 0                 | 0.965 |
+| dut.reg3               | 32        | 0.922           | 0.191        | 0                 | 0.953 |
+| dut.s                  | 32        | 0.062           | 0.000        | 30                | 0.062 |
+| dut.t                  | 32        | 0.636           | 0.148        | 0                 | 0.781 |
+| dut.tail               | 32        | 0.594           | 0.000        | 13                | 0.594 |
+| dut.temp               | 32        | 0.993           | 0.938        | 0                 | 0.996 |
+| dut.tsign              | 32        | 0.636           | 0.148        | 0                 | 0.781 |
+| state_name.state_name  | 64        | 0.003           | 0.000        | 64                | 0.002 |
+| tb_top.exec_count      | 32        | 0.312           | 0.000        | 22                | 0.312 |
+| tb_top.fetch_count     | 32        | 0.312           | 0.000        | 22                | 0.312 |
+| tb_top.file            | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| tb_top.i               | 32        | 0.357           | 0.000        | 20                | 0.364 |
+| tb_top.last_read_addr  | 20        | 0.995           | 0.972        | 0                 | 0.997 |
+| tb_top.last_read_data  | 32        | 1.000           | 0.998        | 0                 | 1.000 |
+| tb_top.last_write_addr | 20        | 0.100           | 0.000        | 18                | 0.100 |
+| tb_top.last_write_data | 32        | 0.924           | 0.376        | 0                 | 0.955 |
+| tb_top.prev_reg0       | 32        | 0.938           | 0.358        | 0                 | 0.963 |
+| tb_top.prev_reg1       | 32        | 0.953           | 0.581        | 0                 | 0.972 |
+| tb_top.prev_reg2       | 32        | 0.942           | 0.413        | 0                 | 0.965 |
+| tb_top.prev_reg3       | 32        | 0.922           | 0.191        | 0                 | 0.953 |
+| tb_top.read_count      | 32        | 0.340           | 0.000        | 21                | 0.342 |
+| tb_top.write_count     | 32        | 0.179           | 0.000        | 26                | 0.183 |
++------------------------+-----------+-----------------+--------------+-------------------+-------+
+
+scan recommendations for signals (H < 0.14):
+state_name.state, dut.MAR[31], dut.MAR[30], dut.MAR[29], dut.MAR[28], dut.MAR[27], dut.MAR[26]
+dut.MAR[25], dut.MAR[24], dut.MAR[23], dut.MAR[22], dut.MAR[21], dut.MAR[20], dut.cf[31], dut.cf[30]
+dut.cf[29], dut.cf[28], dut.cf[27], dut.cf[26], dut.cf[25], dut.cf[24], dut.cf[23], dut.cf[22]
+dut.cf[21], dut.cf[20], dut.cf[19], dut.cf[18], dut.cf[17], dut.cf[16], dut.cf[15], dut.cf[14]
+dut.cf[13], dut.cf[12], dut.cf[11], dut.cf[10], dut.cf[9], dut.cf[8], dut.cf[7], dut.cf[6]
+dut.cf[5], dut.cf[4], dut.cf[3], dut.cf[2], dut.cf[1], dut.d[31], dut.d[30], dut.d[29], dut.d[28]
+dut.d[27], dut.d[26], dut.d[25], dut.d[24], dut.d[23], dut.d[22], dut.d[21], dut.d[20], dut.d[19]
+dut.d[18], dut.d[17], dut.d[16], dut.d[15], dut.d[14], dut.d[13], dut.d[12], dut.d[11], dut.d[10]
+dut.d[9], dut.d[8], dut.d[7], dut.d[6], dut.d[5], dut.d[4], dut.d[3], dut.d[2], dut.df[31]
+dut.df[30], dut.df[29], dut.df[28], dut.df[27], dut.df[26], dut.df[25], dut.df[24], dut.df[23]
+dut.df[22], dut.df[21], dut.df[20], dut.df[19], dut.df[18], dut.df[17], dut.df[16], dut.df[15]
+dut.df[14], dut.df[13], dut.df[12], dut.df[11], dut.df[10], dut.df[9], dut.df[8], dut.df[7]
+dut.df[6], dut.df[5], dut.df[4], dut.df[3], dut.ff[31], dut.ff[30], dut.ff[29], dut.ff[28]
+dut.ff[27], dut.ff[26], dut.ff[25], dut.ff[24], dut.ff[23], dut.ff[22], dut.ff[21], dut.ff[20]
+dut.ff[19], dut.ff[18], dut.ff[17], dut.ff[16], dut.ff[15], dut.ff[14], dut.ff[13], dut.ff[12]
+dut.ff[11], dut.ff[10], dut.ff[9], dut.ff[8], dut.ff[7], dut.ff[6], dut.ff[5], dut.ff[4], dut.mf[31]
+dut.mf[30], dut.mf[29], dut.mf[28], dut.mf[27], dut.mf[26], dut.mf[25], dut.mf[24], dut.mf[23]
+dut.mf[22], dut.mf[21], dut.mf[20], dut.mf[19], dut.mf[18], dut.mf[17], dut.mf[16], dut.mf[15]
+dut.mf[14], dut.mf[13], dut.mf[12], dut.mf[11], dut.mf[10], dut.mf[9], dut.mf[8], dut.mf[7]
+dut.mf[6], dut.mf[5], dut.mf[4], dut.mf[3], dut.mf[2], dut.s[31], dut.s[30], dut.s[29], dut.s[28]
+dut.s[27], dut.s[26], dut.s[25], dut.s[24], dut.s[23], dut.s[22], dut.s[21], dut.s[20], dut.s[19]
+dut.s[18], dut.s[17], dut.s[16], dut.s[15], dut.s[14], dut.s[13], dut.s[12], dut.s[11], dut.s[10]
+dut.s[9], dut.s[8], dut.s[7], dut.s[6], dut.s[5], dut.s[4], dut.s[3], dut.s[2], dut.tail[31]
+dut.tail[30], dut.tail[29], dut.tail[28], dut.tail[27], dut.tail[26], dut.tail[25], dut.tail[24]
+dut.tail[23], dut.tail[22], dut.tail[21], dut.tail[20], state_name.state_name[63]
+state_name.state_name[62], state_name.state_name[61], state_name.state_name[60]
+state_name.state_name[59], state_name.state_name[58], state_name.state_name[57]
+state_name.state_name[56], state_name.state_name[55], state_name.state_name[54]
+state_name.state_name[53], state_name.state_name[52], state_name.state_name[51]
+state_name.state_name[50], state_name.state_name[49], state_name.state_name[48]
+state_name.state_name[47], state_name.state_name[46], state_name.state_name[45]
+state_name.state_name[44], state_name.state_name[43], state_name.state_name[42]
+state_name.state_name[41], state_name.state_name[40], state_name.state_name[39]
+state_name.state_name[37], state_name.state_name[36], state_name.state_name[35]
+state_name.state_name[32], state_name.state_name[31], state_name.state_name[29]
+state_name.state_name[28], state_name.state_name[27], state_name.state_name[25]
+state_name.state_name[23], state_name.state_name[21], state_name.state_name[19]
+state_name.state_name[17], state_name.state_name[16], state_name.state_name[15]
+state_name.state_name[13], state_name.state_name[12], state_name.state_name[11]
+state_name.state_name[10], state_name.state_name[7], state_name.state_name[5]
+state_name.state_name[4], state_name.state_name[2], state_name.state_name[1]
+state_name.state_name[0], tb_top.exec_count[31], tb_top.exec_count[30], tb_top.exec_count[29]
+tb_top.exec_count[28], tb_top.exec_count[27], tb_top.exec_count[26], tb_top.exec_count[25]
+tb_top.exec_count[24], tb_top.exec_count[23], tb_top.exec_count[22], tb_top.exec_count[21]
+tb_top.exec_count[20], tb_top.exec_count[19], tb_top.exec_count[18], tb_top.exec_count[17]
+tb_top.exec_count[16], tb_top.exec_count[15], tb_top.exec_count[14], tb_top.exec_count[13]
+tb_top.exec_count[12], tb_top.exec_count[11], tb_top.exec_count[10], tb_top.fetch_count[31]
+tb_top.fetch_count[30], tb_top.fetch_count[29], tb_top.fetch_count[28], tb_top.fetch_count[27]
+tb_top.fetch_count[26], tb_top.fetch_count[25], tb_top.fetch_count[24], tb_top.fetch_count[23]
+tb_top.fetch_count[22], tb_top.fetch_count[21], tb_top.fetch_count[20], tb_top.fetch_count[19]
+tb_top.fetch_count[18], tb_top.fetch_count[17], tb_top.fetch_count[16], tb_top.fetch_count[15]
+tb_top.fetch_count[14], tb_top.fetch_count[13], tb_top.fetch_count[12], tb_top.fetch_count[11]
+tb_top.fetch_count[10], tb_top.file[31], tb_top.file[30], tb_top.file[29], tb_top.file[28]
+tb_top.file[27], tb_top.file[26], tb_top.file[25], tb_top.file[24], tb_top.file[23], tb_top.file[22]
+tb_top.file[21], tb_top.file[20], tb_top.file[19], tb_top.file[18], tb_top.file[17], tb_top.file[16]
+tb_top.file[15], tb_top.file[14], tb_top.file[13], tb_top.file[12], tb_top.file[11], tb_top.file[10]
+tb_top.file[9], tb_top.file[8], tb_top.file[7], tb_top.file[6], tb_top.file[5], tb_top.file[4]
+tb_top.file[3], tb_top.file[2], tb_top.file[1], tb_top.file[0], tb_top.i[31], tb_top.i[30]
+tb_top.i[29], tb_top.i[28], tb_top.i[27], tb_top.i[26], tb_top.i[25], tb_top.i[24], tb_top.i[23]
+tb_top.i[22], tb_top.i[21], tb_top.i[20], tb_top.i[19], tb_top.i[18], tb_top.i[17], tb_top.i[16]
+tb_top.i[15], tb_top.i[14], tb_top.i[13], tb_top.i[12], tb_top.last_write_addr[19]
+tb_top.last_write_addr[18], tb_top.last_write_addr[17], tb_top.last_write_addr[16]
+tb_top.last_write_addr[15], tb_top.last_write_addr[14], tb_top.last_write_addr[13]
+tb_top.last_write_addr[12], tb_top.last_write_addr[11], tb_top.last_write_addr[10]
+tb_top.last_write_addr[9], tb_top.last_write_addr[8], tb_top.last_write_addr[7]
+tb_top.last_write_addr[6], tb_top.last_write_addr[5], tb_top.last_write_addr[3]
+tb_top.last_write_addr[1], tb_top.last_write_addr[0], tb_top.read_count[31], tb_top.read_count[30]
+tb_top.read_count[29], tb_top.read_count[28], tb_top.read_count[27], tb_top.read_count[26]
+tb_top.read_count[25], tb_top.read_count[24], tb_top.read_count[23], tb_top.read_count[22]
+tb_top.read_count[21], tb_top.read_count[20], tb_top.read_count[19], tb_top.read_count[18]
+tb_top.read_count[17], tb_top.read_count[16], tb_top.read_count[15], tb_top.read_count[14]
+tb_top.read_count[13], tb_top.read_count[12], tb_top.read_count[11], tb_top.write_count[31]
+tb_top.write_count[30], tb_top.write_count[29], tb_top.write_count[28], tb_top.write_count[27]
+tb_top.write_count[26], tb_top.write_count[25], tb_top.write_count[24], tb_top.write_count[23]
+tb_top.write_count[22], tb_top.write_count[21], tb_top.write_count[20], tb_top.write_count[19]
+tb_top.write_count[18], tb_top.write_count[17], tb_top.write_count[16], tb_top.write_count[15]
+tb_top.write_count[14], tb_top.write_count[13], tb_top.write_count[12], tb_top.write_count[11]
+tb_top.write_count[10], tb_top.write_count[9], tb_top.write_count[8], tb_top.write_count[7]
+tb_top.write_count[6], tb_top.rst_n, dut.reset, state_name.state_name[38], state_name.state_name[34]
+state_name.state_name[33], state_name.state_name[30], state_name.state_name[26]
+state_name.state_name[24], state_name.state_name[22], state_name.state_name[20]
+state_name.state_name[18], state_name.state_name[14], state_name.state_name[9]
+state_name.state_name[8], state_name.state_name[6], state_name.state_name[3], dut.tail[8]

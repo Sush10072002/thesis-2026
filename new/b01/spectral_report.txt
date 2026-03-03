@@ -1,0 +1,29 @@
+SPECTRAL ANALYSIS REPORT (R=16, non-overlapping windows)
+========================================================================
+Signal                                     W       T     SC_avg              Best_PO   PO_cos
+------------------------------------------------------------------------
+tb_top.file                              103    6912     1.0090 tb_top.file             1.000
+tb_top.rst_n                               1    6912     1.0301 tb_top.rst_n            1.000
+dut.reset                                  1    6912     1.0301 tb_top.rst_n            1.000
+dut.clock                                  1    6912     2.0000 tb_top.i                0.031
+tb_top.state_f_count                      24    6912     2.5055 tb_top.state_f_count    1.000
+tb_top.state_g_count                      27    6912     2.9363 tb_top.state_g_count    1.000
+tb_top.overflow_count                     27    6912     3.3870 tb_top.overflow_coun    1.000
+tb_top.state_wf1_count                    27    6912     3.4592 tb_top.state_wf1_cou    1.000
+tb_top.state_c_count                      30    6912     3.6497 tb_top.state_c_count    1.000
+tb_top.state_e_count                      27    6912     3.8950 tb_top.state_e_count    1.000
+tb_top.state_a_count                      27    6912     4.0423 tb_top.state_a_count    1.000
+tb_top.state_b_count                      30    6912     4.0966 tb_top.state_b_count    1.000
+tb_top.state_wf0_count                    27    6912     4.4204 tb_top.state_wf0_cou    1.000
+tb_top.i                                  37    6912     8.7697 tb_top.i                1.000
+dut.overflw                                1    6912    11.4282 tb_top.i                0.919
+dut.stato                                  7    6912    19.8364 tb_top.i                0.653
+dut.outp                                   1    6912    25.9664 tb_top.i                0.597
+dut.line1                                  1    6912    26.2205 tb_top.i                0.586
+dut.line2                                  1    6912    26.4693 tb_top.i                0.584
+
+Notes:
+  - Lower SC_avg => harder to control (strong scan candidates).
+  - PO_cos is a crude observability proxy (max cosine similarity
+    between a signal's spectrum and any PO spectrum).
+  - You’ll still rank/registers by SCC etc. outside this script.

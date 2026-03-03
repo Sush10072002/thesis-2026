@@ -1,0 +1,50 @@
+SPECTRAL ANALYSIS REPORT (R=16, non-overlapping windows)
+========================================================================
+Signal                                     W       T     SC_avg              Best_PO   PO_cos
+------------------------------------------------------------------------
+tb_top.file                              103    3776     1.0000 tb_top.file             1.000
+state_name.state                           2    3776     1.0000 tb_top.file             1.000
+dut.stato_scanFF                           1    3776     1.0000 tb_top.file             1.000
+dut.RMAX_scanFF                            1    3776     1.0000 tb_top.file             1.000
+dut.RMIN_scanFF                            1    3776     1.0000 tb_top.file             1.000
+dut.REGD_scanFF                           21    3776     1.0338 tb_top.file             1.000
+state_name.state_name                     64    3776     1.0401 tb_top.file             1.000
+tb_top.rst_n                               1    3776     1.0551 tb_top.rst_n            1.000
+dut.RESET                                  1    3776     1.0551 tb_top.rst_n            1.000
+dut.CLOCK                                  1    3776     2.0000 tb_top.prev_testmode    0.071
+dut.REG4                                 104    3776     2.0919 tb_top.rst_n            0.999
+dut.REG3                                 104    3776     3.2964 tb_top.rst_n            0.997
+dut.test                                 104    3776     4.9993 tb_top.i                0.993
+dut.temp                                 104    3776     4.9993 tb_top.i                0.993
+dut.REG2                                 104    3776     5.0646 tb_top.i                0.992
+dut.RLAST                                104    3776     5.5768 tb_top.i                0.994
+tb_top.i                                  37    3776     7.6686 tb_top.i                1.000
+dut.REG1                                 104    3776     7.7295 tb_top.i                0.999
+dut.RMIN_original                        104    3776     7.8300 tb_top.i                0.999
+dut.RMAX                                 104    3776     8.9819 tb_top.prev_RMAX        1.000
+tb_top.prev_RMAX                         104    3776     9.0964 tb_top.prev_RMAX        1.000
+tb_top.DATA_OUT                           24    3776     9.2857 tb_top.DATA_OUT         1.000
+dut.DATA_OUT                              24    3776     9.2857 tb_top.DATA_OUT         1.000
+tb_top.prev_DATA_OUT                      24    3776     9.4071 tb_top.prev_DATA_OUT    1.000
+tb_top.prev_RMIN                         104    3776     9.4488 tb_top.prev_RMIN        1.000
+dut.RMIN                                 104    3776     9.4871 tb_top.prev_RMIN        1.000
+dut.REGD_original                         21    3776     9.9417 tb_top.prev_DATA_OUT    0.998
+dut.RMAX_original                        104    3776    10.1210 tb_top.prev_DATA_OUT    0.998
+dut.stato                                  4    3776    15.8784 tb_top.prev_RMIN        0.957
+dut.REGD                                  21    3776    17.6079 tb_top.prev_RMIN        0.918
+dut.stato_original                         4    3776    19.7394 tb_top.prev_testmode    0.944
+dut.DATA_IN                               24    3776    24.4169 tb_top.prev_testmode    0.993
+dut.ENA                                    1    3776    25.8665 tb_top.prev_testmode    0.998
+tb_top.prev_testmode                       1    3776    25.9979 tb_top.prev_testmode    1.000
+dut.ENABLE                                 1    3776    26.0816 tb_top.prev_testmode    0.998
+dut.testmode                               1    3776    26.2246 tb_top.prev_testmode    0.999
+dut.RES                                    1    3776    26.3146 tb_top.prev_testmode    0.999
+dut.RESTART                                1    3776    26.3633 tb_top.prev_testmode    0.999
+dut.AVERAGE                                1    3776    26.3909 tb_top.prev_testmode    0.998
+dut.AVE                                    1    3776    26.5953 tb_top.prev_testmode    0.998
+
+Notes:
+  - Lower SC_avg => harder to control (strong scan candidates).
+  - PO_cos is a crude observability proxy (max cosine similarity
+    between a signal's spectrum and any PO spectrum).
+  - You’ll still rank/registers by SCC etc. outside this script.

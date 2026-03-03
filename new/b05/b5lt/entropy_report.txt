@@ -1,0 +1,132 @@
+SINGLE-BIT SIGNALS
++----------------------+----------+----------+-------+-------+---------+
+| Signal               | Count(0) | Count(1) | p(0)  | p(1)  | Entropy |
++----------------------+----------+----------+-------+-------+---------+
+| dut.CLOCK            | 2319     | 2319     | 0.500 | 0.500 | 1.000   |
+| dut.EN_DISP          | 205      | 4432     | 0.044 | 0.956 | 0.261   |
+| dut.FLAG             | 1927     | 2710     | 0.416 | 0.584 | 0.979   |
+| dut.MAG1             | 3468     | 1169     | 0.748 | 0.252 | 0.815   |
+| dut.MAG2             | 3543     | 1094     | 0.764 | 0.236 | 0.788   |
+| dut.MIN1             | 3817     | 820      | 0.823 | 0.177 | 0.673   |
+| dut.RESET            | 4633     | 4        | 0.999 | 0.001 | 0.010   |
+| dut.RES_DISP         | 11       | 4626     | 0.002 | 0.998 | 0.024   |
+| dut.SIGN             | 4433     | 205      | 0.956 | 0.044 | 0.261   |
+| dut.START            | 2285     | 2353     | 0.493 | 0.507 | 1.000   |
+| dut.testmode         | 2308     | 2330     | 0.498 | 0.502 | 1.000   |
+| tb_top.prev_SIGN     | 4436     | 202      | 0.956 | 0.044 | 0.258   |
+| tb_top.prev_testmode | 2309     | 2329     | 0.498 | 0.502 | 1.000   |
+| tb_top.rst_n         | 4        | 4634     | 0.001 | 0.999 | 0.010   |
++----------------------+----------+----------+-------+-------+---------+
+
+MULTI-BIT BUSES
++-----------------------+-----------+-----------------+--------------+-------------------+-------+
+| Signal                | Bit Count | Average Entropy | Min. Entropy | #low-entropy bits | C(B)  |
++-----------------------+-----------+-----------------+--------------+-------------------+-------+
+| dut.AC1               | 32        | 0.683           | 0.602        | 0                 | 0.810 |
+| dut.AC2               | 32        | 0.837           | 0.788        | 0                 | 0.902 |
+| dut.DISPMAX1          | 7         | 0.003           | 0.000        | 7                 | 0.002 |
+| dut.DISPMAX2          | 7         | 0.003           | 0.000        | 7                 | 0.002 |
+| dut.DISPMAX3          | 7         | 0.003           | 0.000        | 7                 | 0.002 |
+| dut.DISPNUM1          | 7         | 0.003           | 0.000        | 7                 | 0.002 |
+| dut.DISPNUM2          | 7         | 0.003           | 0.000        | 7                 | 0.002 |
+| dut.MAR               | 32        | 0.156           | 0.000        | 27                | 0.156 |
+| dut.MAX               | 32        | 0.937           | 0.000        | 1                 | 0.950 |
+| dut.NUM               | 32        | 0.112           | 0.000        | 28                | 0.117 |
+| dut.STATO             | 3         | 1.000           | 0.999        | 0                 | 1.000 |
+| dut.TEMP              | 32        | 0.743           | 0.671        | 0                 | 0.846 |
+| dut.TM                | 32        | 0.166           | 0.000        | 5                 | 0.437 |
+| dut.TMN               | 6         | 0.000           | 0.000        | 6                 | 0.000 |
+| dut.TN                | 32        | 0.062           | 0.000        | 30                | 0.062 |
+| dut.TN_original       | 32        | 0.012           | 0.000        | 30                | 0.032 |
+| dut.TN_scanFF         | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| state_name.state      | 3         | 0.000           | 0.000        | 3                 | 0.000 |
+| state_name.state_name | 64        | 0.002           | 0.000        | 64                | 0.001 |
+| tb_top.file           | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| tb_top.i              | 32        | 0.367           | 0.000        | 20                | 0.370 |
+| tb_top.peak_count     | 32        | 0.269           | 0.000        | 23                | 0.274 |
+| tb_top.prev_DISPMAX1  | 7         | 0.003           | 0.000        | 7                 | 0.002 |
+| tb_top.prev_DISPMAX2  | 7         | 0.003           | 0.000        | 7                 | 0.002 |
+| tb_top.prev_DISPMAX3  | 7         | 0.003           | 0.000        | 7                 | 0.002 |
+| tb_top.prev_DISPNUM1  | 7         | 0.003           | 0.000        | 7                 | 0.002 |
+| tb_top.prev_DISPNUM2  | 7         | 0.003           | 0.000        | 7                 | 0.002 |
++-----------------------+-----------+-----------------+--------------+-------------------+-------+
+
+scan recommendations for signals (H < 0.14):
+dut.DISPMAX1[5], dut.DISPMAX1[4], dut.DISPMAX1[3], dut.DISPMAX1[2], dut.DISPMAX1[1], dut.DISPMAX1[0]
+dut.DISPMAX2[5], dut.DISPMAX2[4], dut.DISPMAX2[3], dut.DISPMAX2[2], dut.DISPMAX2[1], dut.DISPMAX2[0]
+dut.DISPMAX3[5], dut.DISPMAX3[4], dut.DISPMAX3[3], dut.DISPMAX3[2], dut.DISPMAX3[1], dut.DISPMAX3[0]
+dut.DISPNUM1[5], dut.DISPNUM1[4], dut.DISPNUM1[3], dut.DISPNUM1[2], dut.DISPNUM1[1], dut.DISPNUM1[0]
+dut.DISPNUM2[5], dut.DISPNUM2[4], dut.DISPNUM2[3], dut.DISPNUM2[2], dut.DISPNUM2[1], dut.DISPNUM2[0]
+dut.MAR[31], dut.MAR[30], dut.MAR[29], dut.MAR[28], dut.MAR[27], dut.MAR[26], dut.MAR[25]
+dut.MAR[24], dut.MAR[23], dut.MAR[22], dut.MAR[21], dut.MAR[20], dut.MAR[19], dut.MAR[18]
+dut.MAR[17], dut.MAR[16], dut.MAR[15], dut.MAR[14], dut.MAR[13], dut.MAR[12], dut.MAR[11]
+dut.MAR[10], dut.MAR[9], dut.MAR[8], dut.MAR[7], dut.MAR[6], dut.MAR[5], dut.MAX[0], dut.NUM[31]
+dut.NUM[30], dut.NUM[29], dut.NUM[28], dut.NUM[27], dut.NUM[26], dut.NUM[25], dut.NUM[24]
+dut.NUM[23], dut.NUM[22], dut.NUM[21], dut.NUM[20], dut.NUM[19], dut.NUM[18], dut.NUM[17]
+dut.NUM[16], dut.NUM[15], dut.NUM[14], dut.NUM[13], dut.NUM[12], dut.NUM[11], dut.NUM[10]
+dut.NUM[9], dut.NUM[8], dut.NUM[7], dut.NUM[6], dut.NUM[5], dut.NUM[4], dut.TM[7], dut.TM[6]
+dut.TM[5], dut.TM[4], dut.TM[1], dut.TMN[5], dut.TMN[4], dut.TMN[3], dut.TMN[2], dut.TMN[1]
+dut.TMN[0], dut.TN[31], dut.TN[30], dut.TN[29], dut.TN[28], dut.TN[27], dut.TN[26], dut.TN[25]
+dut.TN[24], dut.TN[23], dut.TN[22], dut.TN[21], dut.TN[20], dut.TN[19], dut.TN[18], dut.TN[17]
+dut.TN[16], dut.TN[15], dut.TN[14], dut.TN[13], dut.TN[12], dut.TN[11], dut.TN[10], dut.TN[9]
+dut.TN[8], dut.TN[7], dut.TN[6], dut.TN[5], dut.TN[4], dut.TN[2], dut.TN[1], dut.TN_original[31]
+dut.TN_original[30], dut.TN_original[29], dut.TN_original[28], dut.TN_original[27]
+dut.TN_original[26], dut.TN_original[25], dut.TN_original[24], dut.TN_original[23]
+dut.TN_original[22], dut.TN_original[21], dut.TN_original[20], dut.TN_original[19]
+dut.TN_original[18], dut.TN_original[17], dut.TN_original[16], dut.TN_original[15]
+dut.TN_original[14], dut.TN_original[13], dut.TN_original[12], dut.TN_original[11]
+dut.TN_original[10], dut.TN_original[9], dut.TN_original[8], dut.TN_original[7], dut.TN_original[6]
+dut.TN_original[5], dut.TN_original[4], dut.TN_original[2], dut.TN_original[1], dut.TN_scanFF[31]
+dut.TN_scanFF[30], dut.TN_scanFF[29], dut.TN_scanFF[28], dut.TN_scanFF[27], dut.TN_scanFF[26]
+dut.TN_scanFF[25], dut.TN_scanFF[24], dut.TN_scanFF[23], dut.TN_scanFF[22], dut.TN_scanFF[21]
+dut.TN_scanFF[20], dut.TN_scanFF[19], dut.TN_scanFF[18], dut.TN_scanFF[17], dut.TN_scanFF[16]
+dut.TN_scanFF[15], dut.TN_scanFF[14], dut.TN_scanFF[13], dut.TN_scanFF[12], dut.TN_scanFF[11]
+dut.TN_scanFF[10], dut.TN_scanFF[9], dut.TN_scanFF[8], dut.TN_scanFF[7], dut.TN_scanFF[6]
+dut.TN_scanFF[5], dut.TN_scanFF[4], dut.TN_scanFF[3], dut.TN_scanFF[2], dut.TN_scanFF[1]
+dut.TN_scanFF[0], state_name.state[2], state_name.state[1], state_name.state[0]
+state_name.state_name[63], state_name.state_name[62], state_name.state_name[61]
+state_name.state_name[60], state_name.state_name[59], state_name.state_name[58]
+state_name.state_name[57], state_name.state_name[56], state_name.state_name[55]
+state_name.state_name[54], state_name.state_name[53], state_name.state_name[52]
+state_name.state_name[51], state_name.state_name[50], state_name.state_name[49]
+state_name.state_name[48], state_name.state_name[47], state_name.state_name[46]
+state_name.state_name[45], state_name.state_name[44], state_name.state_name[43]
+state_name.state_name[42], state_name.state_name[41], state_name.state_name[40]
+state_name.state_name[39], state_name.state_name[38], state_name.state_name[37]
+state_name.state_name[36], state_name.state_name[35], state_name.state_name[34]
+state_name.state_name[33], state_name.state_name[32], state_name.state_name[31]
+state_name.state_name[30], state_name.state_name[29], state_name.state_name[28]
+state_name.state_name[27], state_name.state_name[26], state_name.state_name[25]
+state_name.state_name[24], state_name.state_name[23], state_name.state_name[19]
+state_name.state_name[18], state_name.state_name[15], state_name.state_name[11]
+state_name.state_name[9], state_name.state_name[8], state_name.state_name[7]
+state_name.state_name[6], state_name.state_name[3], state_name.state_name[2]
+state_name.state_name[1], state_name.state_name[0], tb_top.file[31], tb_top.file[30]
+tb_top.file[29], tb_top.file[28], tb_top.file[27], tb_top.file[26], tb_top.file[25], tb_top.file[24]
+tb_top.file[23], tb_top.file[22], tb_top.file[21], tb_top.file[20], tb_top.file[19], tb_top.file[18]
+tb_top.file[17], tb_top.file[16], tb_top.file[15], tb_top.file[14], tb_top.file[13], tb_top.file[12]
+tb_top.file[11], tb_top.file[10], tb_top.file[9], tb_top.file[8], tb_top.file[7], tb_top.file[6]
+tb_top.file[5], tb_top.file[4], tb_top.file[3], tb_top.file[2], tb_top.file[1], tb_top.file[0]
+tb_top.i[31], tb_top.i[30], tb_top.i[29], tb_top.i[28], tb_top.i[27], tb_top.i[26], tb_top.i[25]
+tb_top.i[24], tb_top.i[23], tb_top.i[22], tb_top.i[21], tb_top.i[20], tb_top.i[19], tb_top.i[18]
+tb_top.i[17], tb_top.i[16], tb_top.i[15], tb_top.i[14], tb_top.i[13], tb_top.i[12]
+tb_top.peak_count[31], tb_top.peak_count[30], tb_top.peak_count[29], tb_top.peak_count[28]
+tb_top.peak_count[27], tb_top.peak_count[26], tb_top.peak_count[25], tb_top.peak_count[24]
+tb_top.peak_count[23], tb_top.peak_count[22], tb_top.peak_count[21], tb_top.peak_count[20]
+tb_top.peak_count[19], tb_top.peak_count[18], tb_top.peak_count[17], tb_top.peak_count[16]
+tb_top.peak_count[15], tb_top.peak_count[14], tb_top.peak_count[13], tb_top.peak_count[12]
+tb_top.peak_count[11], tb_top.peak_count[10], tb_top.peak_count[9], tb_top.prev_DISPMAX1[5]
+tb_top.prev_DISPMAX1[4], tb_top.prev_DISPMAX1[3], tb_top.prev_DISPMAX1[2], tb_top.prev_DISPMAX1[1]
+tb_top.prev_DISPMAX1[0], tb_top.prev_DISPMAX2[5], tb_top.prev_DISPMAX2[4], tb_top.prev_DISPMAX2[3]
+tb_top.prev_DISPMAX2[2], tb_top.prev_DISPMAX2[1], tb_top.prev_DISPMAX2[0], tb_top.prev_DISPMAX3[5]
+tb_top.prev_DISPMAX3[4], tb_top.prev_DISPMAX3[3], tb_top.prev_DISPMAX3[2], tb_top.prev_DISPMAX3[1]
+tb_top.prev_DISPMAX3[0], tb_top.prev_DISPNUM1[5], tb_top.prev_DISPNUM1[4], tb_top.prev_DISPNUM1[3]
+tb_top.prev_DISPNUM1[2], tb_top.prev_DISPNUM1[1], tb_top.prev_DISPNUM1[0], tb_top.prev_DISPNUM2[5]
+tb_top.prev_DISPNUM2[4], tb_top.prev_DISPNUM2[3], tb_top.prev_DISPNUM2[2], tb_top.prev_DISPNUM2[1]
+tb_top.prev_DISPNUM2[0], tb_top.rst_n, dut.RESET, state_name.state_name[22]
+state_name.state_name[21], state_name.state_name[20], state_name.state_name[17]
+state_name.state_name[16], state_name.state_name[14], state_name.state_name[13]
+state_name.state_name[12], state_name.state_name[10], state_name.state_name[5]
+state_name.state_name[4], tb_top.prev_DISPMAX1[6], tb_top.prev_DISPMAX2[6], tb_top.prev_DISPMAX3[6]
+tb_top.prev_DISPNUM1[6], tb_top.prev_DISPNUM2[6], dut.DISPMAX1[6], dut.DISPMAX2[6], dut.DISPMAX3[6]
+dut.DISPNUM1[6], dut.DISPNUM2[6], dut.RES_DISP

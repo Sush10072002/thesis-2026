@@ -1,0 +1,30 @@
+SINGLE-BIT SIGNALS
++--------------+----------+----------+-------+-------+---------+
+| Signal       | Count(0) | Count(1) | p(0)  | p(1)  | Entropy |
++--------------+----------+----------+-------+-------+---------+
+| dut.clock    | 8935     | 8935     | 0.500 | 0.500 | 1.000   |
+| dut.linea    | 8874     | 8996     | 0.497 | 0.503 | 1.000   |
+| dut.reset    | 17865    | 4        | 1.000 | 0.000 | 0.003   |
+| dut.u        | 15091    | 2779     | 0.844 | 0.156 | 0.623   |
+| tb_top.rst_n | 4        | 17866    | 0.000 | 1.000 | 0.003   |
++--------------+----------+----------+-------+-------+---------+
+
+MULTI-BIT BUSES
++-------------+-----------+-----------------+--------------+-------------------+-------+
+| Signal      | Bit Count | Average Entropy | Min. Entropy | #low-entropy bits | C(B)  |
++-------------+-----------+-----------------+--------------+-------------------+-------+
+| dut.stato   | 3         | 0.980           | 0.956        | 0                 | 0.988 |
+| tb_top.file | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| tb_top.i    | 32        | 0.419           | 0.000        | 18                | 0.426 |
++-------------+-----------+-----------------+--------------+-------------------+-------+
+
+scan recommendations for signals (H < 0.14):
+tb_top.file[31], tb_top.file[30], tb_top.file[29], tb_top.file[28], tb_top.file[27], tb_top.file[26]
+tb_top.file[25], tb_top.file[24], tb_top.file[23], tb_top.file[22], tb_top.file[21], tb_top.file[20]
+tb_top.file[19], tb_top.file[18], tb_top.file[17], tb_top.file[16], tb_top.file[15], tb_top.file[14]
+tb_top.file[13], tb_top.file[12], tb_top.file[11], tb_top.file[10], tb_top.file[9], tb_top.file[8]
+tb_top.file[7], tb_top.file[6], tb_top.file[5], tb_top.file[4], tb_top.file[3], tb_top.file[2]
+tb_top.file[1], tb_top.file[0], tb_top.i[31], tb_top.i[30], tb_top.i[29], tb_top.i[28], tb_top.i[27]
+tb_top.i[26], tb_top.i[25], tb_top.i[24], tb_top.i[23], tb_top.i[22], tb_top.i[21], tb_top.i[20]
+tb_top.i[19], tb_top.i[18], tb_top.i[17], tb_top.i[16], tb_top.i[15], tb_top.i[14], tb_top.rst_n
+dut.reset

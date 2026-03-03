@@ -1,0 +1,49 @@
+SPECTRAL ANALYSIS REPORT (R=16, non-overlapping windows)
+========================================================================
+Signal                                     W       T     SC_avg              Best_PO   PO_cos
+------------------------------------------------------------------------
+tb_top.file                              103    5964     1.0000 tb_top.file             1.000
+dut.TMN                                    1    5964     1.0000 tb_top.file             1.000
+tb_top.final_max                         104    5964     1.0192 tb_top.final_max        1.000
+dut.TM                                   104    5964     1.0264 tb_top.final_max        1.000
+dut.TN                                    24    5964     1.0286 tb_top.final_max        1.000
+tb_top.rst_n                               1    5964     1.0349 tb_top.rst_n            1.000
+dut.RESET                                  1    5964     1.0349 tb_top.rst_n            1.000
+tb_top.max_num_detected                   10    5964     1.0437 tb_top.max_num_detec    1.000
+tb_top.state_st0_count                     1    5964     1.0679 tb_top.state_st0_cou    1.000
+dut.RES_DISP                               1    5964     1.0679 tb_top.state_st0_cou    1.000
+tb_top.state_st2_count                    17    5964     1.5189 tb_top.state_st2_cou    1.000
+tb_top.scan_complete_count                20    5964     1.6968 tb_top.scan_complete    1.000
+tb_top.state_st1_count                    20    5964     1.7191 tb_top.state_st1_cou    1.000
+tb_top.display_active_count               24    5964     1.7732 tb_top.display_activ    1.000
+dut.CLOCK                                  1    5964     2.0000 tb_top.i                0.031
+dut.DISPMAX1                              20    5964     2.4582 tb_top.display_activ    1.000
+dut.DISPMAX2                              20    5964     2.4582 tb_top.display_activ    1.000
+dut.DISPMAX3                              20    5964     2.4582 tb_top.display_activ    1.000
+dut.DISPNUM1                              20    5964     2.4582 tb_top.display_activ    1.000
+dut.DISPNUM2                              21    5964     2.5595 tb_top.display_activ    1.000
+dut.MAX                                  104    5964     3.0898 tb_top.display_activ    0.999
+dut.SIGN                                   1    5964     4.6539 tb_top.start_count      0.996
+dut.EN_DISP                                1    5964     4.6539 tb_top.start_count      0.996
+dut.STATO                                  7    5964     6.3090 tb_top.i                0.293
+tb_top.state_st4_count                    34    5964     6.7215 tb_top.state_st4_cou    1.000
+tb_top.start_count                        34    5964     6.8275 tb_top.start_count      1.000
+tb_top.state_st3_count                    34    5964     6.8369 tb_top.state_st3_cou    1.000
+tb_top.flag_set_count                     34    5964     7.4121 tb_top.flag_set_coun    1.000
+dut.AC1                                  104    5964     7.5942 tb_top.flag_set_coun    0.988
+dut.NUM                                   10    5964     8.5138 tb_top.i                0.998
+tb_top.i                                  37    5964     8.7388 tb_top.i                1.000
+dut.TEMP                                 104    5964     9.4465 tb_top.i                0.998
+dut.AC2                                  104    5964     9.8664 tb_top.i                0.998
+dut.MAR                                   14    5964    13.7082 tb_top.i                0.960
+dut.MIN1                                   1    5964    15.1505 tb_top.i                0.893
+dut.MAG1                                   1    5964    16.6613 tb_top.i                0.761
+dut.MAG2                                   1    5964    17.7413 tb_top.i                0.895
+dut.FLAG                                   1    5964    22.7897 tb_top.i                0.647
+dut.START                                  1    5964    25.9140 tb_top.i                0.603
+
+Notes:
+  - Lower SC_avg => harder to control (strong scan candidates).
+  - PO_cos is a crude observability proxy (max cosine similarity
+    between a signal's spectrum and any PO spectrum).
+  - You’ll still rank/registers by SCC etc. outside this script.

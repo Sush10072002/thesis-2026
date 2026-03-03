@@ -1,0 +1,30 @@
+[
+  {
+    "signal": "last_g",
+    "type": "CTP"
+  },
+  {
+    "signal": "last_r",
+    "type": "CTP"
+  },
+  {
+    "signal": "sign",
+    "type": "CTP"
+  },
+  {
+    "signal": "state",
+    "type": "CTP"
+  },
+  {
+    "signal": "file",
+    "type": "CTP"
+  },
+  {
+    "signal": "i",
+    "type": "CTP"
+  },
+  {
+    "signal": "state_change_count",
+    "type": "CTP"
+  }
+]

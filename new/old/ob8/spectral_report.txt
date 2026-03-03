@@ -1,0 +1,41 @@
+SPECTRAL ANALYSIS REPORT (R=16, non-overlapping windows)
+========================================================================
+Signal                                     W       T     SC_avg              Best_PO   PO_cos
+------------------------------------------------------------------------
+tb_top.j                                  10   10139     1.0000 tb_top.j                1.000
+tb_top.file                              103   10139     1.0000 tb_top.j                1.000
+tb_top.rst_n                               1   10139     1.0205 tb_top.rst_n            1.000
+dut.RESET                                  1   10139     1.0205 tb_top.rst_n            1.000
+tb_top.input_ff_count                     14   10139     1.1303 tb_top.input_ff_coun    1.000
+tb_top.input_00_count                     11   10139     1.1402 tb_top.input_00_coun    1.000
+tb_top.nonzero_output_count               21   10139     1.6407 tb_top.nonzero_outpu    1.000
+tb_top.output_generated_count             24   10139     1.8379 tb_top.output_genera    1.000
+tb_top.rom_match_count                    24   10139     1.9472 tb_top.rom_match_cou    1.000
+dut.CLOCK                                  1   10139     2.0000 tb_top.i                0.028
+tb_top.total_calculations                 24   10139     2.2610 tb_top.total_calcula    1.000
+tb_top.state_init_count                   24   10139     2.2652 tb_top.state_init_co    1.000
+tb_top.calc_id                            24   10139     2.2652 tb_top.state_init_co    1.000
+tb_top.state_start_st_count               27   10139     2.7726 tb_top.state_start_s    1.000
+dut.ROM_OR                                11   10139     3.7032 tb_top.prev_O           1.000
+tb_top.prev_O                             11   10139     3.9217 tb_top.prev_O           1.000
+dut.O                                     11   10139     4.0462 tb_top.calc_output      1.000
+tb_top.calc_output                        11   10139     4.0462 tb_top.calc_output      1.000
+tb_top.calc_input                         24   10139     4.8915 tb_top.calc_input       1.000
+dut.IN_R                                  24   10139     4.8915 tb_top.calc_input       1.000
+dut.OUT_R                                 11   10139     6.0217 tb_top.state_end_cou    1.000
+tb_top.state_loop_st_count                34   10139     6.0997 tb_top.state_loop_st    1.000
+tb_top.state_end_count                    37   10139     6.1587 tb_top.state_end_cou    1.000
+tb_top.start_count                        37   10139     6.5082 tb_top.start_count      1.000
+tb_top.i                                  40   10139     8.1862 tb_top.i                1.000
+dut.STATO                                  4   10139     9.9451 tb_top.i                0.957
+dut.ROM_1                                 24   10139    18.2463 tb_top.i                0.893
+dut.MAR                                    7   10139    18.5714 tb_top.i                0.843
+dut.ROM_2                                 24   10139    20.3912 tb_top.i                0.852
+dut.I                                     24   10139    24.4159 tb_top.i                0.655
+dut.START                                  1   10139    26.2382 tb_top.i                0.566
+
+Notes:
+  - Lower SC_avg => harder to control (strong scan candidates).
+  - PO_cos is a crude observability proxy (max cosine similarity
+    between a signal's spectrum and any PO spectrum).
+  - You’ll still rank/registers by SCC etc. outside this script.

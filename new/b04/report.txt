@@ -1,0 +1,61 @@
+SINGLE-BIT SIGNALS
++-------------+----------+----------+-------+-------+---------+
+| Signal      | Count(0) | Count(1) | p(0)  | p(1)  | Entropy |
++-------------+----------+----------+-------+-------+---------+
+| dut.AVE     | 22221    | 22103    | 0.501 | 0.499 | 1.000   |
+| dut.AVERAGE | 22221    | 22104    | 0.501 | 0.499 | 1.000   |
+| dut.CLOCK   | 22163    | 22162    | 0.500 | 0.500 | 1.000   |
+| dut.ENA     | 22311    | 22013    | 0.503 | 0.497 | 1.000   |
+| dut.ENABLE  | 22311    | 22014    | 0.503 | 0.497 | 1.000   |
+| dut.RES     | 22137    | 22187    | 0.499 | 0.501 | 1.000   |
+| dut.RESET   | 44321    | 4        | 1.000 | 0.000 | 0.001   |
+| dut.RESTART | 22133    | 22192    | 0.499 | 0.501 | 1.000   |
++-------------+----------+----------+-------+-------+---------+
+
+MULTI-BIT BUSES
++--------------------+-------+-----------------+--------------+-------------------+-------+
+| Signal             | Count | Average Entropy | Min. Entropy | #low-entropy bits | C(B)  |
++--------------------+-------+-----------------+--------------+-------------------+-------+
+| dut.DATA_IN        | 8     | 1.000           | 1.000        | 0                 | 1.000 |
+| dut.DATA_OUT       | 8     | 0.784           | 0.689        | 0                 | 0.870 |
+| dut.REG1           | 32    | 1.000           | 1.000        | 0                 | 1.000 |
+| dut.REG2           | 32    | 1.000           | 1.000        | 0                 | 1.000 |
+| dut.REG3           | 32    | 1.000           | 1.000        | 0                 | 1.000 |
+| dut.REG4           | 32    | 1.000           | 1.000        | 0                 | 1.000 |
+| dut.REGD           | 32    | 0.101           | 0.000        | 25                | 0.148 |
+| dut.RLAST          | 32    | 1.000           | 1.000        | 0                 | 1.000 |
+| dut.RMAX           | 32    | 0.002           | 0.000        | 32                | 0.001 |
+| dut.RMIN           | 32    | 0.004           | 0.000        | 32                | 0.002 |
+| dut.stato          | 2     | 0.002           | 0.001        | 2                 | 0.001 |
+| dut.temp           | 32    | 0.459           | 0.449        | 0                 | 0.676 |
+| dut.test           | 32    | 0.459           | 0.449        | 0                 | 0.676 |
+| tb_top.DATA_OUT    | 8     | 0.784           | 0.689        | 0                 | 0.870 |
+| tb_top.error_count | 32    | 0.000           | 0.000        | 32                | 0.000 |
+| tb_top.i           | 32    | 0.461           | 0.000        | 17                | 0.464 |
++--------------------+-------+-----------------+--------------+-------------------+-------+
+
+scan recommendations for signals (H < 0.14):
+dut.REGD[31], dut.REGD[30], dut.REGD[29], dut.REGD[28], dut.REGD[27], dut.REGD[26], dut.REGD[25]
+dut.REGD[24], dut.REGD[23], dut.REGD[22], dut.REGD[21], dut.REGD[20], dut.REGD[19], dut.REGD[18]
+dut.REGD[17], dut.REGD[16], dut.REGD[15], dut.REGD[14], dut.REGD[13], dut.REGD[12], dut.REGD[11]
+dut.REGD[10], dut.REGD[9], dut.REGD[8], dut.REGD[7], dut.RMAX[31], dut.RMAX[30], dut.RMAX[29]
+dut.RMAX[28], dut.RMAX[27], dut.RMAX[26], dut.RMAX[25], dut.RMAX[24], dut.RMAX[23], dut.RMAX[22]
+dut.RMAX[21], dut.RMAX[20], dut.RMAX[19], dut.RMAX[18], dut.RMAX[17], dut.RMAX[16], dut.RMAX[15]
+dut.RMAX[14], dut.RMAX[13], dut.RMAX[12], dut.RMAX[11], dut.RMAX[10], dut.RMAX[9], dut.RMAX[8]
+dut.RMAX[7], dut.RMIN[4], dut.RMIN[1], tb_top.error_count[31], tb_top.error_count[30]
+tb_top.error_count[29], tb_top.error_count[28], tb_top.error_count[27], tb_top.error_count[26]
+tb_top.error_count[25], tb_top.error_count[24], tb_top.error_count[23], tb_top.error_count[22]
+tb_top.error_count[21], tb_top.error_count[20], tb_top.error_count[19], tb_top.error_count[18]
+tb_top.error_count[17], tb_top.error_count[16], tb_top.error_count[15], tb_top.error_count[14]
+tb_top.error_count[13], tb_top.error_count[12], tb_top.error_count[11], tb_top.error_count[10]
+tb_top.error_count[9], tb_top.error_count[8], tb_top.error_count[7], tb_top.error_count[6]
+tb_top.error_count[5], tb_top.error_count[4], tb_top.error_count[3], tb_top.error_count[2]
+tb_top.error_count[1], tb_top.error_count[0], tb_top.i[31], tb_top.i[30], tb_top.i[29], tb_top.i[28]
+tb_top.i[27], tb_top.i[26], tb_top.i[25], tb_top.i[24], tb_top.i[23], tb_top.i[22], tb_top.i[21]
+tb_top.i[20], tb_top.i[19], tb_top.i[18], tb_top.i[17], tb_top.i[16], tb_top.i[15], dut.RMIN[5]
+dut.RMIN[3], dut.stato[0], dut.RESET, dut.stato[1], dut.RMIN[6], dut.RMIN[2], dut.RMIN[0]
+dut.RMAX[5], dut.RMIN[31], dut.RMIN[30], dut.RMIN[29], dut.RMIN[28], dut.RMIN[27], dut.RMIN[26]
+dut.RMIN[25], dut.RMIN[24], dut.RMIN[23], dut.RMIN[22], dut.RMIN[21], dut.RMIN[20], dut.RMIN[19]
+dut.RMIN[18], dut.RMIN[17], dut.RMIN[16], dut.RMIN[15], dut.RMIN[14], dut.RMIN[13], dut.RMIN[12]
+dut.RMIN[11], dut.RMIN[10], dut.RMIN[9], dut.RMIN[8], dut.RMIN[7], dut.RMAX[3], dut.RMAX[2]
+dut.RMAX[6], dut.RMAX[1], dut.RMAX[4], dut.RMAX[0]

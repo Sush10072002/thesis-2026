@@ -1,0 +1,29 @@
+Parsing b01.vcd
+Parse successful.
+Version:       
+	Synopsys VCS version W-2024.09-SP2_Full64
+
+Date:          
+	Wed Nov 12 10:09:53 2025
+
+Signal count:  16
+Times Recorded:20004
+Scope: 
+Scope: tb_top
+	!	clk
+	"	rst_n
+	#	line1
+	$	line2
+	%	outp
+	&	overflw
+	"	reset
+	!	clock
+	'	i
+Scope: dut
+	!	clock
+	"	reset
+	#	line1
+	$	line2
+	%	outp
+	&	overflw
+	(	stato [3:0]

@@ -1,0 +1,153 @@
+SINGLE-BIT SIGNALS
++--------------+----------+----------+-------+-------+---------+
+| Signal       | Count(0) | Count(1) | p(0)  | p(1)  | Entropy |
++--------------+----------+----------+-------+-------+---------+
+| dut.CLOCK    | 5070     | 5069     | 0.500 | 0.500 | 1.000   |
+| dut.RESET    | 10134    | 4        | 1.000 | 0.000 | 0.005   |
+| dut.START    | 4987     | 5152     | 0.492 | 0.508 | 1.000   |
+| tb_top.rst_n | 4        | 10135    | 0.000 | 1.000 | 0.005   |
++--------------+----------+----------+-------+-------+---------+
+
+MULTI-BIT BUSES
++-------------------------------+-----------+-----------------+--------------+-------------------+-------+
+| Signal                        | Bit Count | Average Entropy | Min. Entropy | #low-entropy bits | C(B)  |
++-------------------------------+-----------+-----------------+--------------+-------------------+-------+
+| dut.I                         | 8         | 1.000           | 1.000        | 0                 | 1.000 |
+| dut.IN_R                      | 8         | 0.994           | 0.969        | 0                 | 0.996 |
+| dut.MAR                       | 8         | 0.365           | 0.000        | 5                 | 0.369 |
+| dut.O                         | 4         | 0.759           | 0.089        | 1                 | 0.755 |
+| dut.OUT_R                     | 4         | 0.626           | 0.059        | 1                 | 0.676 |
+| dut.ROM_1                     | 8         | 0.728           | 0.016        | 1                 | 0.787 |
+| dut.ROM_2                     | 8         | 0.713           | 0.473        | 0                 | 0.828 |
+| dut.ROM_OR                    | 4         | 0.700           | 0.085        | 1                 | 0.720 |
+| dut.STATO                     | 3         | 0.536           | 0.000        | 1                 | 0.588 |
+| tb_top.calc_id                | 32        | 0.250           | 0.000        | 24                | 0.250 |
+| tb_top.calc_input             | 8         | 0.994           | 0.969        | 0                 | 0.996 |
+| tb_top.calc_output            | 4         | 0.759           | 0.089        | 1                 | 0.755 |
+| tb_top.file                   | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| tb_top.i                      | 32        | 0.395           | 0.000        | 19                | 0.400 |
+| tb_top.input_00_count         | 32        | 0.119           | 0.000        | 28                | 0.121 |
+| tb_top.input_ff_count         | 32        | 0.134           | 0.000        | 27                | 0.143 |
+| tb_top.j                      | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| tb_top.nonzero_output_count   | 32        | 0.218           | 0.000        | 25                | 0.218 |
+| tb_top.output_generated_count | 32        | 0.243           | 0.000        | 24                | 0.246 |
+| tb_top.prev_O                 | 4         | 0.759           | 0.089        | 1                 | 0.755 |
+| tb_top.rom_match_count        | 32        | 0.246           | 0.000        | 24                | 0.248 |
+| tb_top.start_count            | 32        | 0.365           | 0.000        | 20                | 0.369 |
+| tb_top.state_end_count        | 32        | 0.358           | 0.000        | 20                | 0.365 |
+| tb_top.state_init_count       | 32        | 0.250           | 0.000        | 24                | 0.250 |
+| tb_top.state_loop_st_count    | 32        | 0.341           | 0.000        | 21                | 0.342 |
+| tb_top.state_start_st_count   | 32        | 0.281           | 0.000        | 23                | 0.281 |
+| tb_top.total_calculations     | 32        | 0.250           | 0.000        | 24                | 0.250 |
++-------------------------------+-----------+-----------------+--------------+-------------------+-------+
+
+scan recommendations for signals (H < 0.14):
+dut.MAR[7], dut.MAR[6], dut.MAR[5], dut.MAR[4], dut.MAR[3], dut.STATO[2], tb_top.calc_id[31]
+tb_top.calc_id[30], tb_top.calc_id[29], tb_top.calc_id[28], tb_top.calc_id[27], tb_top.calc_id[26]
+tb_top.calc_id[25], tb_top.calc_id[24], tb_top.calc_id[23], tb_top.calc_id[22], tb_top.calc_id[21]
+tb_top.calc_id[20], tb_top.calc_id[19], tb_top.calc_id[18], tb_top.calc_id[17], tb_top.calc_id[16]
+tb_top.calc_id[15], tb_top.calc_id[14], tb_top.calc_id[13], tb_top.calc_id[12], tb_top.calc_id[11]
+tb_top.calc_id[10], tb_top.calc_id[9], tb_top.calc_id[8], tb_top.file[31], tb_top.file[30]
+tb_top.file[29], tb_top.file[28], tb_top.file[27], tb_top.file[26], tb_top.file[25], tb_top.file[24]
+tb_top.file[23], tb_top.file[22], tb_top.file[21], tb_top.file[20], tb_top.file[19], tb_top.file[18]
+tb_top.file[17], tb_top.file[16], tb_top.file[15], tb_top.file[14], tb_top.file[13], tb_top.file[12]
+tb_top.file[11], tb_top.file[10], tb_top.file[9], tb_top.file[8], tb_top.file[7], tb_top.file[6]
+tb_top.file[5], tb_top.file[4], tb_top.file[3], tb_top.file[2], tb_top.file[1], tb_top.file[0]
+tb_top.i[31], tb_top.i[30], tb_top.i[29], tb_top.i[28], tb_top.i[27], tb_top.i[26], tb_top.i[25]
+tb_top.i[24], tb_top.i[23], tb_top.i[22], tb_top.i[21], tb_top.i[20], tb_top.i[19], tb_top.i[18]
+tb_top.i[17], tb_top.i[16], tb_top.i[15], tb_top.i[14], tb_top.i[13], tb_top.input_00_count[31]
+tb_top.input_00_count[30], tb_top.input_00_count[29], tb_top.input_00_count[28]
+tb_top.input_00_count[27], tb_top.input_00_count[26], tb_top.input_00_count[25]
+tb_top.input_00_count[24], tb_top.input_00_count[23], tb_top.input_00_count[22]
+tb_top.input_00_count[21], tb_top.input_00_count[20], tb_top.input_00_count[19]
+tb_top.input_00_count[18], tb_top.input_00_count[17], tb_top.input_00_count[16]
+tb_top.input_00_count[15], tb_top.input_00_count[14], tb_top.input_00_count[13]
+tb_top.input_00_count[12], tb_top.input_00_count[11], tb_top.input_00_count[10]
+tb_top.input_00_count[9], tb_top.input_00_count[8], tb_top.input_00_count[7]
+tb_top.input_00_count[6], tb_top.input_00_count[5], tb_top.input_00_count[4]
+tb_top.input_ff_count[31], tb_top.input_ff_count[30], tb_top.input_ff_count[29]
+tb_top.input_ff_count[28], tb_top.input_ff_count[27], tb_top.input_ff_count[26]
+tb_top.input_ff_count[25], tb_top.input_ff_count[24], tb_top.input_ff_count[23]
+tb_top.input_ff_count[22], tb_top.input_ff_count[21], tb_top.input_ff_count[20]
+tb_top.input_ff_count[19], tb_top.input_ff_count[18], tb_top.input_ff_count[17]
+tb_top.input_ff_count[16], tb_top.input_ff_count[15], tb_top.input_ff_count[14]
+tb_top.input_ff_count[13], tb_top.input_ff_count[12], tb_top.input_ff_count[11]
+tb_top.input_ff_count[10], tb_top.input_ff_count[9], tb_top.input_ff_count[8]
+tb_top.input_ff_count[7], tb_top.input_ff_count[6], tb_top.input_ff_count[5], tb_top.j[31]
+tb_top.j[30], tb_top.j[29], tb_top.j[28], tb_top.j[27], tb_top.j[26], tb_top.j[25], tb_top.j[24]
+tb_top.j[23], tb_top.j[22], tb_top.j[21], tb_top.j[20], tb_top.j[19], tb_top.j[18], tb_top.j[17]
+tb_top.j[16], tb_top.j[15], tb_top.j[14], tb_top.j[13], tb_top.j[12], tb_top.j[11], tb_top.j[10]
+tb_top.j[9], tb_top.j[8], tb_top.j[7], tb_top.j[6], tb_top.j[5], tb_top.j[4], tb_top.j[3]
+tb_top.j[2], tb_top.j[1], tb_top.j[0], tb_top.nonzero_output_count[31]
+tb_top.nonzero_output_count[30], tb_top.nonzero_output_count[29], tb_top.nonzero_output_count[28]
+tb_top.nonzero_output_count[27], tb_top.nonzero_output_count[26], tb_top.nonzero_output_count[25]
+tb_top.nonzero_output_count[24], tb_top.nonzero_output_count[23], tb_top.nonzero_output_count[22]
+tb_top.nonzero_output_count[21], tb_top.nonzero_output_count[20], tb_top.nonzero_output_count[19]
+tb_top.nonzero_output_count[18], tb_top.nonzero_output_count[17], tb_top.nonzero_output_count[16]
+tb_top.nonzero_output_count[15], tb_top.nonzero_output_count[14], tb_top.nonzero_output_count[13]
+tb_top.nonzero_output_count[12], tb_top.nonzero_output_count[11], tb_top.nonzero_output_count[10]
+tb_top.nonzero_output_count[9], tb_top.nonzero_output_count[8], tb_top.nonzero_output_count[7]
+tb_top.output_generated_count[31], tb_top.output_generated_count[30]
+tb_top.output_generated_count[29], tb_top.output_generated_count[28]
+tb_top.output_generated_count[27], tb_top.output_generated_count[26]
+tb_top.output_generated_count[25], tb_top.output_generated_count[24]
+tb_top.output_generated_count[23], tb_top.output_generated_count[22]
+tb_top.output_generated_count[21], tb_top.output_generated_count[20]
+tb_top.output_generated_count[19], tb_top.output_generated_count[18]
+tb_top.output_generated_count[17], tb_top.output_generated_count[16]
+tb_top.output_generated_count[15], tb_top.output_generated_count[14]
+tb_top.output_generated_count[13], tb_top.output_generated_count[12]
+tb_top.output_generated_count[11], tb_top.output_generated_count[10]
+tb_top.output_generated_count[9], tb_top.output_generated_count[8], tb_top.rom_match_count[31]
+tb_top.rom_match_count[30], tb_top.rom_match_count[29], tb_top.rom_match_count[28]
+tb_top.rom_match_count[27], tb_top.rom_match_count[26], tb_top.rom_match_count[25]
+tb_top.rom_match_count[24], tb_top.rom_match_count[23], tb_top.rom_match_count[22]
+tb_top.rom_match_count[21], tb_top.rom_match_count[20], tb_top.rom_match_count[19]
+tb_top.rom_match_count[18], tb_top.rom_match_count[17], tb_top.rom_match_count[16]
+tb_top.rom_match_count[15], tb_top.rom_match_count[14], tb_top.rom_match_count[13]
+tb_top.rom_match_count[12], tb_top.rom_match_count[11], tb_top.rom_match_count[10]
+tb_top.rom_match_count[9], tb_top.rom_match_count[8], tb_top.start_count[31], tb_top.start_count[30]
+tb_top.start_count[29], tb_top.start_count[28], tb_top.start_count[27], tb_top.start_count[26]
+tb_top.start_count[25], tb_top.start_count[24], tb_top.start_count[23], tb_top.start_count[22]
+tb_top.start_count[21], tb_top.start_count[20], tb_top.start_count[19], tb_top.start_count[18]
+tb_top.start_count[17], tb_top.start_count[16], tb_top.start_count[15], tb_top.start_count[14]
+tb_top.start_count[13], tb_top.start_count[12], tb_top.state_end_count[31]
+tb_top.state_end_count[30], tb_top.state_end_count[29], tb_top.state_end_count[28]
+tb_top.state_end_count[27], tb_top.state_end_count[26], tb_top.state_end_count[25]
+tb_top.state_end_count[24], tb_top.state_end_count[23], tb_top.state_end_count[22]
+tb_top.state_end_count[21], tb_top.state_end_count[20], tb_top.state_end_count[19]
+tb_top.state_end_count[18], tb_top.state_end_count[17], tb_top.state_end_count[16]
+tb_top.state_end_count[15], tb_top.state_end_count[14], tb_top.state_end_count[13]
+tb_top.state_end_count[12], tb_top.state_init_count[31], tb_top.state_init_count[30]
+tb_top.state_init_count[29], tb_top.state_init_count[28], tb_top.state_init_count[27]
+tb_top.state_init_count[26], tb_top.state_init_count[25], tb_top.state_init_count[24]
+tb_top.state_init_count[23], tb_top.state_init_count[22], tb_top.state_init_count[21]
+tb_top.state_init_count[20], tb_top.state_init_count[19], tb_top.state_init_count[18]
+tb_top.state_init_count[17], tb_top.state_init_count[16], tb_top.state_init_count[15]
+tb_top.state_init_count[14], tb_top.state_init_count[13], tb_top.state_init_count[12]
+tb_top.state_init_count[11], tb_top.state_init_count[10], tb_top.state_init_count[9]
+tb_top.state_init_count[8], tb_top.state_loop_st_count[31], tb_top.state_loop_st_count[30]
+tb_top.state_loop_st_count[29], tb_top.state_loop_st_count[28], tb_top.state_loop_st_count[27]
+tb_top.state_loop_st_count[26], tb_top.state_loop_st_count[25], tb_top.state_loop_st_count[24]
+tb_top.state_loop_st_count[23], tb_top.state_loop_st_count[22], tb_top.state_loop_st_count[21]
+tb_top.state_loop_st_count[20], tb_top.state_loop_st_count[19], tb_top.state_loop_st_count[18]
+tb_top.state_loop_st_count[17], tb_top.state_loop_st_count[16], tb_top.state_loop_st_count[15]
+tb_top.state_loop_st_count[14], tb_top.state_loop_st_count[13], tb_top.state_loop_st_count[12]
+tb_top.state_loop_st_count[11], tb_top.state_start_st_count[31], tb_top.state_start_st_count[30]
+tb_top.state_start_st_count[29], tb_top.state_start_st_count[28], tb_top.state_start_st_count[27]
+tb_top.state_start_st_count[26], tb_top.state_start_st_count[25], tb_top.state_start_st_count[24]
+tb_top.state_start_st_count[23], tb_top.state_start_st_count[22], tb_top.state_start_st_count[21]
+tb_top.state_start_st_count[20], tb_top.state_start_st_count[19], tb_top.state_start_st_count[18]
+tb_top.state_start_st_count[17], tb_top.state_start_st_count[16], tb_top.state_start_st_count[15]
+tb_top.state_start_st_count[14], tb_top.state_start_st_count[13], tb_top.state_start_st_count[12]
+tb_top.state_start_st_count[11], tb_top.state_start_st_count[10], tb_top.state_start_st_count[9]
+tb_top.total_calculations[31], tb_top.total_calculations[30], tb_top.total_calculations[29]
+tb_top.total_calculations[28], tb_top.total_calculations[27], tb_top.total_calculations[26]
+tb_top.total_calculations[25], tb_top.total_calculations[24], tb_top.total_calculations[23]
+tb_top.total_calculations[22], tb_top.total_calculations[21], tb_top.total_calculations[20]
+tb_top.total_calculations[19], tb_top.total_calculations[18], tb_top.total_calculations[17]
+tb_top.total_calculations[16], tb_top.total_calculations[15], tb_top.total_calculations[14]
+tb_top.total_calculations[13], tb_top.total_calculations[12], tb_top.total_calculations[11]
+tb_top.total_calculations[10], tb_top.total_calculations[9], tb_top.total_calculations[8]
+tb_top.rst_n, dut.RESET, dut.ROM_1[3], dut.OUT_R[0], dut.ROM_OR[0], dut.O[0], tb_top.calc_output[0]
+tb_top.prev_O[0]

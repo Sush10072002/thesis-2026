@@ -1,0 +1,153 @@
+SINGLE-BIT SIGNALS
++--------------+----------+----------+-------+-------+---------+
+| Signal       | Count(0) | Count(1) | p(0)  | p(1)  | Entropy |
++--------------+----------+----------+-------+-------+---------+
+| dut.clock    | 2447     | 2447     | 0.500 | 0.500 | 1.000   |
+| dut.fu1      | 2485     | 2408     | 0.508 | 0.492 | 1.000   |
+| dut.fu2      | 2461     | 2432     | 0.503 | 0.497 | 1.000   |
+| dut.fu3      | 2273     | 2620     | 0.465 | 0.535 | 0.996   |
+| dut.fu4      | 2465     | 2428     | 0.504 | 0.496 | 1.000   |
+| dut.request1 | 2436     | 2458     | 0.498 | 0.502 | 1.000   |
+| dut.request2 | 2427     | 2467     | 0.496 | 0.504 | 1.000   |
+| dut.request3 | 2380     | 2514     | 0.486 | 0.514 | 0.999   |
+| dut.request4 | 2491     | 2403     | 0.509 | 0.491 | 1.000   |
+| dut.reset    | 4889     | 4        | 0.999 | 0.001 | 0.010   |
+| dut.ru1      | 2486     | 2408     | 0.508 | 0.492 | 1.000   |
+| dut.ru2      | 2462     | 2432     | 0.503 | 0.497 | 1.000   |
+| dut.ru3      | 2273     | 2621     | 0.464 | 0.536 | 0.996   |
+| dut.ru4      | 2465     | 2428     | 0.504 | 0.496 | 1.000   |
+| tb_top.rst_n | 4        | 4890     | 0.001 | 0.999 | 0.010   |
++--------------+----------+----------+-------+-------+---------+
+
+MULTI-BIT BUSES
++----------------------------+-----------+-----------------+--------------+-------------------+-------+
+| Signal                     | Bit Count | Average Entropy | Min. Entropy | #low-entropy bits | C(B)  |
++----------------------------+-----------+-----------------+--------------+-------------------+-------+
+| dut.coda0                  | 3         | 0.391           | 0.235        | 0                 | 0.635 |
+| dut.coda1                  | 3         | 0.000           | 0.000        | 3                 | 0.000 |
+| dut.coda2                  | 3         | 0.000           | 0.000        | 3                 | 0.000 |
+| dut.coda3                  | 3         | 0.000           | 0.000        | 3                 | 0.000 |
+| dut.grant                  | 4         | 0.464           | 0.166        | 0                 | 0.679 |
+| dut.grant_o                | 4         | 0.464           | 0.166        | 0                 | 0.679 |
+| dut.stato                  | 2         | 1.000           | 1.000        | 0                 | 1.000 |
+| tb_top.file                | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| tb_top.grant1_count        | 32        | 0.287           | 0.000        | 22                | 0.297 |
+| tb_top.grant2_count        | 32        | 0.250           | 0.000        | 23                | 0.262 |
+| tb_top.grant3_count        | 32        | 0.211           | 0.000        | 24                | 0.226 |
+| tb_top.grant4_count        | 32        | 0.155           | 0.000        | 27                | 0.156 |
+| tb_top.i                   | 32        | 0.362           | 0.000        | 20                | 0.367 |
+| tb_top.queue_full_count    | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| tb_top.request1_count      | 32        | 0.331           | 0.000        | 21                | 0.336 |
+| tb_top.request2_count      | 32        | 0.332           | 0.000        | 21                | 0.337 |
+| tb_top.request3_count      | 32        | 0.333           | 0.000        | 21                | 0.337 |
+| tb_top.request4_count      | 32        | 0.330           | 0.000        | 21                | 0.336 |
+| tb_top.state_analisi_count | 32        | 0.331           | 0.000        | 21                | 0.336 |
+| tb_top.state_assign_count  | 32        | 0.331           | 0.000        | 21                | 0.336 |
+| tb_top.state_init_count    | 32        | 0.000           | 0.000        | 32                | 0.000 |
+| tb_top.total_grants        | 32        | 0.319           | 0.000        | 21                | 0.329 |
++----------------------------+-----------+-----------------+--------------+-------------------+-------+
+
+scan recommendations for signals (H < 0.14):
+dut.coda1[2], dut.coda1[1], dut.coda1[0], dut.coda2[2], dut.coda2[1], dut.coda2[0], dut.coda3[2]
+dut.coda3[1], dut.coda3[0], tb_top.file[31], tb_top.file[30], tb_top.file[29], tb_top.file[28]
+tb_top.file[27], tb_top.file[26], tb_top.file[25], tb_top.file[24], tb_top.file[23], tb_top.file[22]
+tb_top.file[21], tb_top.file[20], tb_top.file[19], tb_top.file[18], tb_top.file[17], tb_top.file[16]
+tb_top.file[15], tb_top.file[14], tb_top.file[13], tb_top.file[12], tb_top.file[11], tb_top.file[10]
+tb_top.file[9], tb_top.file[8], tb_top.file[7], tb_top.file[6], tb_top.file[5], tb_top.file[4]
+tb_top.file[3], tb_top.file[2], tb_top.file[1], tb_top.file[0], tb_top.grant1_count[31]
+tb_top.grant1_count[30], tb_top.grant1_count[29], tb_top.grant1_count[28], tb_top.grant1_count[27]
+tb_top.grant1_count[26], tb_top.grant1_count[25], tb_top.grant1_count[24], tb_top.grant1_count[23]
+tb_top.grant1_count[22], tb_top.grant1_count[21], tb_top.grant1_count[20], tb_top.grant1_count[19]
+tb_top.grant1_count[18], tb_top.grant1_count[17], tb_top.grant1_count[16], tb_top.grant1_count[15]
+tb_top.grant1_count[14], tb_top.grant1_count[13], tb_top.grant1_count[12], tb_top.grant1_count[11]
+tb_top.grant1_count[10], tb_top.grant2_count[31], tb_top.grant2_count[30], tb_top.grant2_count[29]
+tb_top.grant2_count[28], tb_top.grant2_count[27], tb_top.grant2_count[26], tb_top.grant2_count[25]
+tb_top.grant2_count[24], tb_top.grant2_count[23], tb_top.grant2_count[22], tb_top.grant2_count[21]
+tb_top.grant2_count[20], tb_top.grant2_count[19], tb_top.grant2_count[18], tb_top.grant2_count[17]
+tb_top.grant2_count[16], tb_top.grant2_count[15], tb_top.grant2_count[14], tb_top.grant2_count[13]
+tb_top.grant2_count[12], tb_top.grant2_count[11], tb_top.grant2_count[10], tb_top.grant2_count[9]
+tb_top.grant3_count[31], tb_top.grant3_count[30], tb_top.grant3_count[29], tb_top.grant3_count[28]
+tb_top.grant3_count[27], tb_top.grant3_count[26], tb_top.grant3_count[25], tb_top.grant3_count[24]
+tb_top.grant3_count[23], tb_top.grant3_count[22], tb_top.grant3_count[21], tb_top.grant3_count[20]
+tb_top.grant3_count[19], tb_top.grant3_count[18], tb_top.grant3_count[17], tb_top.grant3_count[16]
+tb_top.grant3_count[15], tb_top.grant3_count[14], tb_top.grant3_count[13], tb_top.grant3_count[12]
+tb_top.grant3_count[11], tb_top.grant3_count[10], tb_top.grant3_count[9], tb_top.grant3_count[8]
+tb_top.grant4_count[31], tb_top.grant4_count[30], tb_top.grant4_count[29], tb_top.grant4_count[28]
+tb_top.grant4_count[27], tb_top.grant4_count[26], tb_top.grant4_count[25], tb_top.grant4_count[24]
+tb_top.grant4_count[23], tb_top.grant4_count[22], tb_top.grant4_count[21], tb_top.grant4_count[20]
+tb_top.grant4_count[19], tb_top.grant4_count[18], tb_top.grant4_count[17], tb_top.grant4_count[16]
+tb_top.grant4_count[15], tb_top.grant4_count[14], tb_top.grant4_count[13], tb_top.grant4_count[12]
+tb_top.grant4_count[11], tb_top.grant4_count[10], tb_top.grant4_count[9], tb_top.grant4_count[8]
+tb_top.grant4_count[7], tb_top.grant4_count[6], tb_top.i[31], tb_top.i[30], tb_top.i[29]
+tb_top.i[28], tb_top.i[27], tb_top.i[26], tb_top.i[25], tb_top.i[24], tb_top.i[23], tb_top.i[22]
+tb_top.i[21], tb_top.i[20], tb_top.i[19], tb_top.i[18], tb_top.i[17], tb_top.i[16], tb_top.i[15]
+tb_top.i[14], tb_top.i[13], tb_top.i[12], tb_top.queue_full_count[31], tb_top.queue_full_count[30]
+tb_top.queue_full_count[29], tb_top.queue_full_count[28], tb_top.queue_full_count[27]
+tb_top.queue_full_count[26], tb_top.queue_full_count[25], tb_top.queue_full_count[24]
+tb_top.queue_full_count[23], tb_top.queue_full_count[22], tb_top.queue_full_count[21]
+tb_top.queue_full_count[20], tb_top.queue_full_count[19], tb_top.queue_full_count[18]
+tb_top.queue_full_count[17], tb_top.queue_full_count[16], tb_top.queue_full_count[15]
+tb_top.queue_full_count[14], tb_top.queue_full_count[13], tb_top.queue_full_count[12]
+tb_top.queue_full_count[11], tb_top.queue_full_count[10], tb_top.queue_full_count[9]
+tb_top.queue_full_count[8], tb_top.queue_full_count[7], tb_top.queue_full_count[6]
+tb_top.queue_full_count[5], tb_top.queue_full_count[4], tb_top.queue_full_count[3]
+tb_top.queue_full_count[2], tb_top.queue_full_count[1], tb_top.queue_full_count[0]
+tb_top.request1_count[31], tb_top.request1_count[30], tb_top.request1_count[29]
+tb_top.request1_count[28], tb_top.request1_count[27], tb_top.request1_count[26]
+tb_top.request1_count[25], tb_top.request1_count[24], tb_top.request1_count[23]
+tb_top.request1_count[22], tb_top.request1_count[21], tb_top.request1_count[20]
+tb_top.request1_count[19], tb_top.request1_count[18], tb_top.request1_count[17]
+tb_top.request1_count[16], tb_top.request1_count[15], tb_top.request1_count[14]
+tb_top.request1_count[13], tb_top.request1_count[12], tb_top.request1_count[11]
+tb_top.request2_count[31], tb_top.request2_count[30], tb_top.request2_count[29]
+tb_top.request2_count[28], tb_top.request2_count[27], tb_top.request2_count[26]
+tb_top.request2_count[25], tb_top.request2_count[24], tb_top.request2_count[23]
+tb_top.request2_count[22], tb_top.request2_count[21], tb_top.request2_count[20]
+tb_top.request2_count[19], tb_top.request2_count[18], tb_top.request2_count[17]
+tb_top.request2_count[16], tb_top.request2_count[15], tb_top.request2_count[14]
+tb_top.request2_count[13], tb_top.request2_count[12], tb_top.request2_count[11]
+tb_top.request3_count[31], tb_top.request3_count[30], tb_top.request3_count[29]
+tb_top.request3_count[28], tb_top.request3_count[27], tb_top.request3_count[26]
+tb_top.request3_count[25], tb_top.request3_count[24], tb_top.request3_count[23]
+tb_top.request3_count[22], tb_top.request3_count[21], tb_top.request3_count[20]
+tb_top.request3_count[19], tb_top.request3_count[18], tb_top.request3_count[17]
+tb_top.request3_count[16], tb_top.request3_count[15], tb_top.request3_count[14]
+tb_top.request3_count[13], tb_top.request3_count[12], tb_top.request3_count[11]
+tb_top.request4_count[31], tb_top.request4_count[30], tb_top.request4_count[29]
+tb_top.request4_count[28], tb_top.request4_count[27], tb_top.request4_count[26]
+tb_top.request4_count[25], tb_top.request4_count[24], tb_top.request4_count[23]
+tb_top.request4_count[22], tb_top.request4_count[21], tb_top.request4_count[20]
+tb_top.request4_count[19], tb_top.request4_count[18], tb_top.request4_count[17]
+tb_top.request4_count[16], tb_top.request4_count[15], tb_top.request4_count[14]
+tb_top.request4_count[13], tb_top.request4_count[12], tb_top.request4_count[11]
+tb_top.state_analisi_count[31], tb_top.state_analisi_count[30], tb_top.state_analisi_count[29]
+tb_top.state_analisi_count[28], tb_top.state_analisi_count[27], tb_top.state_analisi_count[26]
+tb_top.state_analisi_count[25], tb_top.state_analisi_count[24], tb_top.state_analisi_count[23]
+tb_top.state_analisi_count[22], tb_top.state_analisi_count[21], tb_top.state_analisi_count[20]
+tb_top.state_analisi_count[19], tb_top.state_analisi_count[18], tb_top.state_analisi_count[17]
+tb_top.state_analisi_count[16], tb_top.state_analisi_count[15], tb_top.state_analisi_count[14]
+tb_top.state_analisi_count[13], tb_top.state_analisi_count[12], tb_top.state_analisi_count[11]
+tb_top.state_assign_count[31], tb_top.state_assign_count[30], tb_top.state_assign_count[29]
+tb_top.state_assign_count[28], tb_top.state_assign_count[27], tb_top.state_assign_count[26]
+tb_top.state_assign_count[25], tb_top.state_assign_count[24], tb_top.state_assign_count[23]
+tb_top.state_assign_count[22], tb_top.state_assign_count[21], tb_top.state_assign_count[20]
+tb_top.state_assign_count[19], tb_top.state_assign_count[18], tb_top.state_assign_count[17]
+tb_top.state_assign_count[16], tb_top.state_assign_count[15], tb_top.state_assign_count[14]
+tb_top.state_assign_count[13], tb_top.state_assign_count[12], tb_top.state_assign_count[11]
+tb_top.state_init_count[31], tb_top.state_init_count[30], tb_top.state_init_count[29]
+tb_top.state_init_count[28], tb_top.state_init_count[27], tb_top.state_init_count[26]
+tb_top.state_init_count[25], tb_top.state_init_count[24], tb_top.state_init_count[23]
+tb_top.state_init_count[22], tb_top.state_init_count[21], tb_top.state_init_count[20]
+tb_top.state_init_count[19], tb_top.state_init_count[18], tb_top.state_init_count[17]
+tb_top.state_init_count[16], tb_top.state_init_count[15], tb_top.state_init_count[14]
+tb_top.state_init_count[13], tb_top.state_init_count[12], tb_top.state_init_count[11]
+tb_top.state_init_count[10], tb_top.state_init_count[9], tb_top.state_init_count[8]
+tb_top.state_init_count[7], tb_top.state_init_count[6], tb_top.state_init_count[5]
+tb_top.state_init_count[4], tb_top.state_init_count[3], tb_top.state_init_count[2]
+tb_top.state_init_count[1], tb_top.total_grants[31], tb_top.total_grants[30]
+tb_top.total_grants[29], tb_top.total_grants[28], tb_top.total_grants[27], tb_top.total_grants[26]
+tb_top.total_grants[25], tb_top.total_grants[24], tb_top.total_grants[23], tb_top.total_grants[22]
+tb_top.total_grants[21], tb_top.total_grants[20], tb_top.total_grants[19], tb_top.total_grants[18]
+tb_top.total_grants[17], tb_top.total_grants[16], tb_top.total_grants[15], tb_top.total_grants[14]
+tb_top.total_grants[13], tb_top.total_grants[12], tb_top.total_grants[11], tb_top.rst_n, dut.reset
+tb_top.state_init_count[0], tb_top.grant4_count[0]

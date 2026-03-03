@@ -1,0 +1,27 @@
+SPECTRAL ANALYSIS REPORT (R=16, non-overlapping windows)
+========================================================================
+Signal                                     W       T     SC_avg              Best_PO   PO_cos
+------------------------------------------------------------------------
+tb_top.file                              103    7285     1.0000 tb_top.file             1.000
+state_name.state                           3    7285     1.0000 tb_top.file             1.000
+state_name.state_name                    207    7285     1.0072 tb_top.file             1.000
+tb_top.rst_n                               1    7285     1.0286 tb_top.rst_n            1.000
+dut.RESET                                  1    7285     1.0286 tb_top.rst_n            1.000
+dut.CLOCK                                  1    7285     2.0000 tb_top.i                0.030
+dut.ROM_OR                                11    7285     3.6383 tb_top.rst_n            0.996
+dut.O                                     11    7285     4.0734 tb_top.rst_n            0.994
+dut.IN_R                                  24    7285     4.8966 tb_top.i                0.993
+dut.OUT_R                                 11    7285     5.8965 tb_top.i                0.996
+tb_top.i                                  37    7285     7.4800 tb_top.i                1.000
+dut.STATO                                  4    7285     9.7889 tb_top.i                0.955
+dut.ROM_1                                 24    7285    18.2164 tb_top.i                0.877
+dut.MAR                                    7    7285    18.5343 tb_top.i                0.824
+dut.ROM_2                                 24    7285    20.3600 tb_top.i                0.832
+dut.I                                     24    7285    24.3814 tb_top.i                0.640
+dut.START                                  1    7285    26.1890 tb_top.i                0.549
+
+Notes:
+  - Lower SC_avg => harder to control (strong scan candidates).
+  - PO_cos is a crude observability proxy (max cosine similarity
+    between a signal's spectrum and any PO spectrum).
+  - You’ll still rank/registers by SCC etc. outside this script.

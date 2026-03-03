@@ -1,0 +1,32 @@
+
+ENTROPY ANALYSIS
+------------------------------------------------------------------------
+Signal               | Count(0)  | Count(1)  | p(0)   | p(1)   | Entropy
+------------------------------------------------------------------------
+dut.CLOCK            |     22163 |     22162 |   0.50 |   0.50 |   1.000
+dut.RESET            |     44321 |         4 |   1.00 |   0.00 |   0.001
+dut.RESTART          |     22133 |     22192 |   0.50 |   0.50 |   1.000
+dut.AVERAGE          |     22221 |     22104 |   0.50 |   0.50 |   1.000
+dut.ENABLE           |     22311 |     22014 |   0.50 |   0.50 |   1.000
+dut.DATA_IN          |         0 |         0 |   0.00 |   0.00 |   0.000
+tb_top.DATA_OUT      |         0 |         0 |   0.00 |   0.00 |   0.000
+tb_top.i             |         0 |         0 |   0.00 |   0.00 |   0.000
+tb_top.error_count   |         0 |         0 |   0.00 |   0.00 |   0.000
+dut.stato            |         0 |         0 |   0.00 |   0.00 |   0.000
+dut.RMAX             |         0 |         0 |   0.00 |   0.00 |   0.000
+dut.RMIN             |         0 |         0 |   0.00 |   0.00 |   0.000
+dut.DATA_OUT         |         0 |         0 |   0.00 |   0.00 |   0.000
+dut.RLAST            |         0 |         0 |   0.00 |   0.00 |   0.000
+dut.REG1             |         0 |         0 |   0.00 |   0.00 |   0.000
+dut.REG2             |         0 |         0 |   0.00 |   0.00 |   0.000
+dut.REG3             |         0 |         0 |   0.00 |   0.00 |   0.000
+dut.REG4             |         0 |         0 |   0.00 |   0.00 |   0.000
+dut.REGD             |         0 |         0 |   0.00 |   0.00 |   0.000
+dut.test             |         0 |         0 |   0.00 |   0.00 |   0.000
+dut.temp             |         0 |         0 |   0.00 |   0.00 |   0.000
+dut.RES              |     22136 |     22187 |   0.50 |   0.50 |   1.000
+dut.AVE              |     22220 |     22103 |   0.50 |   0.50 |   1.000
+dut.ENA              |     22310 |     22013 |   0.50 |   0.50 |   1.000
+
+SCAN RECOMMENDATIONS (Entropy < 0.14):
+dut.RESET, dut.DATA_IN, tb_top.DATA_OUT, tb_top.i, tb_top.error_count, dut.stato, dut.RMAX, dut.RMIN, dut.DATA_OUT, dut.RLAST, dut.REG1, dut.REG2, dut.REG3, dut.REG4, dut.REGD, dut.test, dut.temp

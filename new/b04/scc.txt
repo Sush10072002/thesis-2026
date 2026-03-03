@@ -1,0 +1,21 @@
+clock tb_top.clk
+  /tb_top/dut/AVE
+  /tb_top/AVERAGE
+  /tb_top/DATA_IN
+  /tb_top/DATA_OUT
+  /tb_top/dut/ENA
+  /tb_top/dut/RLAST
+  /tb_top/ENABLE
+  /tb_top/dut/DATA_OUT
+  /tb_top/dut/RES
+  /tb_top/RESTART
+  /tb_top/dut/AVERAGE
+  /tb_top/dut/DATA_IN
+  /tb_top/dut/ENABLE
+  /tb_top/dut/REG1
+  /tb_top/dut/REG2
+  /tb_top/dut/REG3
+  /tb_top/dut/REG4
+  /tb_top/dut/RESTART
+  /tb_top/i
+
